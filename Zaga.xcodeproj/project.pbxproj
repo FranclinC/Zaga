@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		00ECD0081AEFF988001021CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
+		49C00B161AF013A500A04034 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C00B151AF013A500A04034 /* ReportViewController.m */; };
+		49C00B191AF0140100A04034 /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C00B181AF0140100A04034 /* StadiumViewController.m */; };
+		49C00B1C1AF014FA00A04034 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C00B1B1AF014FA00A04034 /* MainViewController.m */; };
+		49C00B1F1AF0159800A04034 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C00B1E1AF0159800A04034 /* MapViewController.m */; };
+		49C00B221AF015C100A04034 /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C00B211AF015C100A04034 /* SelectViewController.m */; };
+		49C00B251AF017ED00A04034 /* GlobalObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C00B241AF017ED00A04034 /* GlobalObjects.m */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
-		49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BEC1AEF05F300D24A71 /* ViewController.m */; };
 		49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BEE1AEF05F300D24A71 /* Main.storyboard */; };
 		49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF11AEF05F300D24A71 /* Images.xcassets */; };
 		49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */; };
@@ -32,13 +37,23 @@
 		00ECD0071AEFF988001021CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00ECD0091AEFF9A9001021CD /* Zaga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Zaga.entitlements; sourceTree = "<group>"; };
 		00ECD00A1AEFF9AF001021CD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		49C00B141AF013A500A04034 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		49C00B151AF013A500A04034 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		49C00B171AF0140100A04034 /* StadiumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumViewController.h; sourceTree = "<group>"; };
+		49C00B181AF0140100A04034 /* StadiumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumViewController.m; sourceTree = "<group>"; };
+		49C00B1A1AF014FA00A04034 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		49C00B1B1AF014FA00A04034 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		49C00B1D1AF0159800A04034 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		49C00B1E1AF0159800A04034 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		49C00B201AF015C100A04034 /* SelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectViewController.h; sourceTree = "<group>"; };
+		49C00B211AF015C100A04034 /* SelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewController.m; sourceTree = "<group>"; };
+		49C00B231AF017ED00A04034 /* GlobalObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalObjects.h; sourceTree = "<group>"; };
+		49C00B241AF017ED00A04034 /* GlobalObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalObjects.m; sourceTree = "<group>"; };
 		49E69BE11AEF05F300D24A71 /* Zaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BE51AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69BE61AEF05F300D24A71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49E69BE81AEF05F300D24A71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49E69BE91AEF05F300D24A71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		49E69BEB1AEF05F300D24A71 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		49E69BEC1AEF05F300D24A71 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		49E69BEF1AEF05F300D24A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49E69BF11AEF05F300D24A71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49E69BF41AEF05F300D24A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -92,12 +107,22 @@
 				00ECD0091AEFF9A9001021CD /* Zaga.entitlements */,
 				49E69BE81AEF05F300D24A71 /* AppDelegate.h */,
 				49E69BE91AEF05F300D24A71 /* AppDelegate.m */,
-				49E69BEB1AEF05F300D24A71 /* ViewController.h */,
-				49E69BEC1AEF05F300D24A71 /* ViewController.m */,
 				49E69BEE1AEF05F300D24A71 /* Main.storyboard */,
+				49C00B231AF017ED00A04034 /* GlobalObjects.h */,
+				49C00B241AF017ED00A04034 /* GlobalObjects.m */,
+				49C00B201AF015C100A04034 /* SelectViewController.h */,
+				49C00B211AF015C100A04034 /* SelectViewController.m */,
+				49C00B1D1AF0159800A04034 /* MapViewController.h */,
+				49C00B1E1AF0159800A04034 /* MapViewController.m */,
+				49C00B1A1AF014FA00A04034 /* MainViewController.h */,
+				49C00B1B1AF014FA00A04034 /* MainViewController.m */,
 				49E69BF11AEF05F300D24A71 /* Images.xcassets */,
 				49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */,
 				49E69BE41AEF05F300D24A71 /* Supporting Files */,
+				49C00B141AF013A500A04034 /* ReportViewController.h */,
+				49C00B151AF013A500A04034 /* ReportViewController.m */,
+				49C00B171AF0140100A04034 /* StadiumViewController.h */,
+				49C00B181AF0140100A04034 /* StadiumViewController.m */,
 			);
 			path = Zaga;
 			sourceTree = "<group>";
@@ -234,10 +259,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */,
+				49C00B221AF015C100A04034 /* SelectViewController.m in Sources */,
+				49C00B161AF013A500A04034 /* ReportViewController.m in Sources */,
+				49C00B191AF0140100A04034 /* StadiumViewController.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
+				49C00B1C1AF014FA00A04034 /* MainViewController.m in Sources */,
+				49C00B251AF017ED00A04034 /* GlobalObjects.m in Sources */,
 				00ECD0081AEFF988001021CD /* README.md in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
+				49C00B1F1AF0159800A04034 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
