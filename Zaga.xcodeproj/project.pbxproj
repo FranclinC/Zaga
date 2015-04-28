@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00ECD0081AEFF988001021CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
+		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
 		49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BEC1AEF05F300D24A71 /* ViewController.m */; };
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00ECD0071AEFF988001021CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		00ECD0091AEFF9A9001021CD /* Zaga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Zaga.entitlements; sourceTree = "<group>"; };
+		00ECD00A1AEFF9AF001021CD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		49E69BE11AEF05F300D24A71 /* Zaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BE51AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69BE61AEF05F300D24A71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +69,11 @@
 		49E69BD81AEF05F300D24A71 = {
 			isa = PBXGroup;
 			children = (
+				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
 				49E69BE31AEF05F300D24A71 /* Zaga */,
 				49E69BFD1AEF05F300D24A71 /* ZagaTests */,
 				49E69BE21AEF05F300D24A71 /* Products */,
+				00ECD0071AEFF988001021CD /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +89,7 @@
 		49E69BE31AEF05F300D24A71 /* Zaga */ = {
 			isa = PBXGroup;
 			children = (
+				00ECD0091AEFF9A9001021CD /* Zaga.entitlements */,
 				49E69BE81AEF05F300D24A71 /* AppDelegate.h */,
 				49E69BE91AEF05F300D24A71 /* AppDelegate.m */,
 				49E69BEB1AEF05F300D24A71 /* ViewController.h */,
@@ -168,6 +177,12 @@
 				TargetAttributes = {
 					49E69BE01AEF05F300D24A71 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 46HQV8ZA5C;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					49E69BF91AEF05F300D24A71 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -221,6 +236,7 @@
 			files = (
 				49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
+				00ECD0081AEFF988001021CD /* README.md in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,9 +363,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Zaga/Zaga.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Zaga/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -357,9 +377,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Zaga/Zaga.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Zaga/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -416,6 +440,7 @@
 				49E69C061AEF05F300D24A71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49E69C071AEF05F300D24A71 /* Build configuration list for PBXNativeTarget "ZagaTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +449,7 @@
 				49E69C091AEF05F300D24A71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
