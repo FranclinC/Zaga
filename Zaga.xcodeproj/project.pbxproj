@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		00ECD0081AEFF988001021CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
+		00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD00D1AF00F26001021CD /* CloudProvider.m */; };
+		00ECD0111AF01F18001021CD /* Relato.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Relato.m */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
 		49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BEC1AEF05F300D24A71 /* ViewController.m */; };
@@ -32,6 +34,10 @@
 		00ECD0071AEFF988001021CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00ECD0091AEFF9A9001021CD /* Zaga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Zaga.entitlements; sourceTree = "<group>"; };
 		00ECD00A1AEFF9AF001021CD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		00ECD00C1AF00F26001021CD /* CloudProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudProvider.h; sourceTree = "<group>"; };
+		00ECD00D1AF00F26001021CD /* CloudProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudProvider.m; sourceTree = "<group>"; };
+		00ECD00F1AF01F18001021CD /* Relato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relato.h; sourceTree = "<group>"; };
+		00ECD0101AF01F18001021CD /* Relato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relato.m; sourceTree = "<group>"; };
 		49E69BE11AEF05F300D24A71 /* Zaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BE51AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69BE61AEF05F300D24A71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +104,10 @@
 				49E69BF11AEF05F300D24A71 /* Images.xcassets */,
 				49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */,
 				49E69BE41AEF05F300D24A71 /* Supporting Files */,
+				00ECD00C1AF00F26001021CD /* CloudProvider.h */,
+				00ECD00D1AF00F26001021CD /* CloudProvider.m */,
+				00ECD00F1AF01F18001021CD /* Relato.h */,
+				00ECD0101AF01F18001021CD /* Relato.m */,
 			);
 			path = Zaga;
 			sourceTree = "<group>";
@@ -235,8 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */,
+				00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
 				00ECD0081AEFF988001021CD /* README.md in Sources */,
+				00ECD0111AF01F18001021CD /* Relato.m in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
