@@ -8,6 +8,7 @@
 
 #import "CloudProvider.h"
 
+
 @implementation CloudProvider
 
 -(id) init{
@@ -18,10 +19,11 @@
     }
     return self;
 }
--(BOOL)addOcorrencia:(NSNumber*)Type location:(CLLocation *)position{
+-(BOOL)addRelato:(Relato*)relato{
     CKRecord * record = [[CKRecord alloc] initWithRecordType:@"Relato"];
-    record[@"Location"] = position;
-    record[@"Type"] = Type;
+    record[@"Location"] = relato.position;
+    record[@"Type"] = relato.type;
+    record[@"Time"] = relato.time;
     
     [_publicDatabase saveRecord:record completionHandler:^(CKRecord *artworkRecord, NSError *error){
         /*if (!error) {

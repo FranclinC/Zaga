@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "Relato.h"
 
 @import CloudKit;
 
@@ -16,6 +16,5 @@
 @property CKContainer * myContainer;
 @property CKDatabase * publicDatabase;
 -(id)init;
--(BOOL)addOcorrencia:(NSNumber*)tipo location:(CLLocation *)position;
-
+-(BOOL)addRelato:(Relato*)relato;
 @end
