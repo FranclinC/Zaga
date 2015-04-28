@@ -13,7 +13,6 @@
 		00ECD0111AF01F18001021CD /* Relato.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Relato.m */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
-		49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BEC1AEF05F300D24A71 /* ViewController.m */; };
 		49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BEE1AEF05F300D24A71 /* Main.storyboard */; };
 		49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF11AEF05F300D24A71 /* Images.xcassets */; };
 		49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */; };
@@ -43,8 +42,6 @@
 		49E69BE61AEF05F300D24A71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49E69BE81AEF05F300D24A71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49E69BE91AEF05F300D24A71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		49E69BEB1AEF05F300D24A71 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		49E69BEC1AEF05F300D24A71 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		49E69BEF1AEF05F300D24A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49E69BF11AEF05F300D24A71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49E69BF41AEF05F300D24A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,9 +95,15 @@
 				00ECD0091AEFF9A9001021CD /* Zaga.entitlements */,
 				49E69BE81AEF05F300D24A71 /* AppDelegate.h */,
 				49E69BE91AEF05F300D24A71 /* AppDelegate.m */,
-				49E69BEB1AEF05F300D24A71 /* ViewController.h */,
-				49E69BEC1AEF05F300D24A71 /* ViewController.m */,
 				49E69BEE1AEF05F300D24A71 /* Main.storyboard */,
+				49C00B231AF017ED00A04034 /* GlobalObjects.h */,
+				49C00B241AF017ED00A04034 /* GlobalObjects.m */,
+				49C00B201AF015C100A04034 /* SelectViewController.h */,
+				49C00B211AF015C100A04034 /* SelectViewController.m */,
+				49C00B1D1AF0159800A04034 /* MapViewController.h */,
+				49C00B1E1AF0159800A04034 /* MapViewController.m */,
+				49C00B1A1AF014FA00A04034 /* MainViewController.h */,
+				49C00B1B1AF014FA00A04034 /* MainViewController.m */,
 				49E69BF11AEF05F300D24A71 /* Images.xcassets */,
 				49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */,
 				49E69BE41AEF05F300D24A71 /* Supporting Files */,
@@ -247,9 +250,12 @@
 				49E69BED1AEF05F300D24A71 /* ViewController.m in Sources */,
 				00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
+				49C00B1C1AF014FA00A04034 /* MainViewController.m in Sources */,
+				49C00B251AF017ED00A04034 /* GlobalObjects.m in Sources */,
 				00ECD0081AEFF988001021CD /* README.md in Sources */,
 				00ECD0111AF01F18001021CD /* Relato.m in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
+				49C00B1F1AF0159800A04034 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
