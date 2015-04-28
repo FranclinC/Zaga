@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Relato.h"
+#import <UIKit/UIKit.h>
 
 @import CloudKit;
 
@@ -17,4 +18,5 @@
 @property CKDatabase * publicDatabase;
 -(id)init;
 -(BOOL)addRelato:(Relato*)relato;
+-(NSArray*)queryRelato:(CLLocation*)location;
 @end

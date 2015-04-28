@@ -37,5 +37,23 @@
     return YES;
 }
 
+-(void)queryRelato:(CLLocation *)location{
+    CGFloat raio = 1000.0;
+    
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"distanceToLocation:fromLocation:(location, %@) < %f", location,raio];
+    CKQuery* query = [[CKQuery alloc] initWithRecordType:@"Relato" predicate:predicate];
+    
+    [_publicDatabase performQuery:query inZoneWithID:nil completionHandler:^(NSArray *results, NSError *error) {
+        if (error) {
+            // Error handling for failed fetch from public database
+        }
+        else {
+            // Display the fetched records
+        }}];
+    
+    
+
+}
+
 
 @end
