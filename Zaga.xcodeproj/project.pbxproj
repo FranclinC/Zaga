@@ -24,6 +24,10 @@
 		49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */; };
 		49E69C011AEF05F300D24A71 /* ZagaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69C001AEF05F300D24A71 /* ZagaTests.m */; };
 		49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FE4FCD1AF159E300AB6E02 /* MapKit.framework */; };
+		BAFDAECD1AF1772C00B97E9D /* botaohome 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFDAECC1AF1772C00B97E9D /* botaohome 2.png */; };
+		BAFDAECF1AF1773100B97E9D /* botaomapa 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFDAECE1AF1773100B97E9D /* botaomapa 2.png */; };
+		BAFDAED11AF1773600B97E9D /* botaorefresh 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFDAED01AF1773600B97E9D /* botaorefresh 2.png */; };
+		BAFDAED31AF1775300B97E9D /* botaorelato 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFDAED21AF1775300B97E9D /* botaorelato 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		49E69BFF1AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69C001AEF05F300D24A71 /* ZagaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZagaTests.m; sourceTree = "<group>"; };
 		49FE4FCD1AF159E300AB6E02 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BAFDAECC1AF1772C00B97E9D /* botaohome 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botaohome 2.png"; sourceTree = SOURCE_ROOT; };
+		BAFDAECE1AF1773100B97E9D /* botaomapa 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botaomapa 2.png"; sourceTree = SOURCE_ROOT; };
+		BAFDAED01AF1773600B97E9D /* botaorefresh 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botaorefresh 2.png"; sourceTree = SOURCE_ROOT; };
+		BAFDAED21AF1775300B97E9D /* botaorelato 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botaorelato 2.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,10 @@
 		49E69BE41AEF05F300D24A71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BAFDAECE1AF1773100B97E9D /* botaomapa 2.png */,
+				BAFDAED01AF1773600B97E9D /* botaorefresh 2.png */,
+				BAFDAED21AF1775300B97E9D /* botaorelato 2.png */,
+				BAFDAECC1AF1772C00B97E9D /* botaohome 2.png */,
 				49E69BE51AEF05F300D24A71 /* Info.plist */,
 				49E69BE61AEF05F300D24A71 /* main.m */,
 			);
@@ -261,7 +273,11 @@
 			files = (
 				49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */,
 				49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */,
+				BAFDAECD1AF1772C00B97E9D /* botaohome 2.png in Resources */,
+				BAFDAECF1AF1773100B97E9D /* botaomapa 2.png in Resources */,
+				BAFDAED31AF1775300B97E9D /* botaorelato 2.png in Resources */,
 				49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */,
+				BAFDAED11AF1773600B97E9D /* botaorefresh 2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
