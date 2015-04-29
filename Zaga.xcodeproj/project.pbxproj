@@ -13,6 +13,7 @@
 		005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4B1AF02C3200A318CE /* ReportViewController.m */; };
 		005B1B561AF02C3200A318CE /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4D1AF02C3200A318CE /* SelectViewController.m */; };
 		005B1B571AF02C3200A318CE /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4F1AF02C3200A318CE /* StadiumViewController.m */; };
+		00C59CF91AF1818200EE2024 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C59CF81AF1818200EE2024 /* map.png */; };
 		00ECD0081AEFF988001021CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
 		00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD00D1AF00F26001021CD /* CloudProvider.m */; };
@@ -53,6 +54,7 @@
 		005B1B4D1AF02C3200A318CE /* SelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewController.m; sourceTree = "<group>"; };
 		005B1B4E1AF02C3200A318CE /* StadiumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumViewController.h; sourceTree = "<group>"; };
 		005B1B4F1AF02C3200A318CE /* StadiumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumViewController.m; sourceTree = "<group>"; };
+		00C59CF81AF1818200EE2024 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = ../../../../Downloads/map.png; sourceTree = "<group>"; };
 		00ECD0071AEFF988001021CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00ECD0091AEFF9A9001021CD /* Zaga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Zaga.entitlements; sourceTree = "<group>"; };
 		00ECD00A1AEFF9AF001021CD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -145,6 +147,7 @@
 				00ECD00D1AF00F26001021CD /* CloudProvider.m */,
 				00ECD00F1AF01F18001021CD /* Relato.h */,
 				00ECD0101AF01F18001021CD /* Relato.m */,
+				00C59CF81AF1818200EE2024 /* map.png */,
 			);
 			path = Zaga;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C59CF91AF1818200EE2024 /* map.png in Resources */,
 				49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */,
 				49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */,
 				BAFDAECD1AF1772C00B97E9D /* botaohome 2.png in Resources */,
