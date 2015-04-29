@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Relato.h"
 
 @interface GlobalObjects : NSObject
 
-//-(void)load;
-//-(MyObject1*)myObject1;
+
++(void)loadRelato:(NSArray *) relatos;
++(Relato*)RelatosArray;
 
 @end

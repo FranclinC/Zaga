@@ -8,7 +8,6 @@
 
 #import "CloudProvider.h"
 
-
 @implementation CloudProvider
 
 -(id) init{
@@ -17,6 +16,7 @@
     _myContainer =[CKContainer defaultContainer];
     _publicDatabase = [_myContainer publicCloudDatabase];
     }
+    
     return self;
 }
 -(BOOL)addRelato:(Relato*)relato{
@@ -37,21 +37,29 @@
     return YES;
 }
 
--(void)queryRelato:(CLLocation *)location{
+-(void)queryRelato:(CLLocation *)location handler:(void(^)(NSMutableArray* arr, NSError * error))completion{
     CGFloat raio = 1000.0;
     
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"distanceToLocation:fromLocation:(location, %@) < %f", location,raio];
     CKQuery* query = [[CKQuery alloc] initWithRecordType:@"Relato" predicate:predicate];
     
     [_publicDatabase performQuery:query inZoneWithID:nil completionHandler:^(NSArray *results, NSError *error) {
-        if (error) {
-            // Error handling for failed fetch from public database
+            if(error) {
+                NSLog(@"Error: %@", error.localizedDescription);
+            }
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:results.count];
+            if(results) {
+                for(CKRecord *record in results) {
+                    Relato *channel = [[Relato alloc] init];
+                    channel.position = record[@"Location"];
+                    channel.time = record[@"Time"];
+                    channel.type = record[@"Type"];
+                    [arr addObject:channel];
+                }
+            }
+            completion(arr,error);
         }
-        else {
-            // Display the fetched records
-        }}];
-    
-    
+     ];
 
 }
 

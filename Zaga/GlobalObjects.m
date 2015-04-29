@@ -9,19 +9,17 @@
 #import "GlobalObjects.h"
 
 //static MyObject1* _myObject1 = nil;
+static NSArray * _RelatoArray;
 
 @implementation GlobalObjects
-/*
--(void)load {
-    self.myObject1 = [[MyObject1 alloc] init];
+
+
++(void)loadRelato:(NSArray *)relatos{
+    _RelatoArray = relatos;
 }
 
--(MyObject1*)get {
-    return self.myObject1;
++(NSArray*)RelatosArray {
+    return _RelatoArray;
 }
 
--(void)set (MyObject1 args){
-    self.myObject1 = args;
-}
-*/
 @end
