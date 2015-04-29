@@ -23,6 +23,7 @@
 		49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF11AEF05F300D24A71 /* Images.xcassets */; };
 		49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */; };
 		49E69C011AEF05F300D24A71 /* ZagaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69C001AEF05F300D24A71 /* ZagaTests.m */; };
+		49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FE4FCD1AF159E300AB6E02 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		49E69BFA1AEF05F300D24A71 /* ZagaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZagaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BFF1AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69C001AEF05F300D24A71 /* ZagaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZagaTests.m; sourceTree = "<group>"; };
+		49FE4FCD1AF159E300AB6E02 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */,
 				00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,10 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
+				49FE4FCD1AF159E300AB6E02 /* MapKit.framework */,
+				00ECD0071AEFF988001021CD /* README.md */,
+				49E69BE21AEF05F300D24A71 /* Products */,
 				49E69BE31AEF05F300D24A71 /* Zaga */,
 				49E69BFD1AEF05F300D24A71 /* ZagaTests */,
-				49E69BE21AEF05F300D24A71 /* Products */,
-				00ECD0071AEFF988001021CD /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +218,12 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 46HQV8ZA5C;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
