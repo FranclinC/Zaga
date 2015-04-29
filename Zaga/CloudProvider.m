@@ -26,12 +26,12 @@
     record[@"Time"] = relato.time;
     
     [_publicDatabase saveRecord:record completionHandler:^(CKRecord *artworkRecord, NSError *error){
-        /*if (!error) {
+        if (!error) {
             // Insert successfully saved record code
         }
         else {
             // Insert error handling
-        }*/
+        }
     }];
 
     return YES;
