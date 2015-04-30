@@ -16,15 +16,20 @@
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
 		00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD00D1AF00F26001021CD /* CloudProvider.m */; };
 		00ECD0111AF01F18001021CD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Report.m */; };
-		49CE3DFF1AF2A1E000C64B4E /* arena 14-41-15-427.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DF61AF2A1E000C64B4E /* arena 14-41-15-427.jpg */; };
-		49CE3E001AF2A1E000C64B4E /* arruda 14-41-15-410.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DF71AF2A1E000C64B4E /* arruda 14-41-15-410.jpg */; };
-		49CE3E011AF2A1E000C64B4E /* botaohome 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DF81AF2A1E000C64B4E /* botaohome 2.png */; };
-		49CE3E021AF2A1E000C64B4E /* botaomapa 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DF91AF2A1E000C64B4E /* botaomapa 2.png */; };
-		49CE3E031AF2A1E000C64B4E /* botaorefresh 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DFA1AF2A1E000C64B4E /* botaorefresh 2.png */; };
-		49CE3E041AF2A1E000C64B4E /* botaorelato 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DFB1AF2A1E000C64B4E /* botaorelato 2.png */; };
-		49CE3E051AF2A1E000C64B4E /* ilha 14-41-15-438.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DFC1AF2A1E000C64B4E /* ilha 14-41-15-438.jpg */; };
-		49CE3E061AF2A1E000C64B4E /* map 14-41-15-425.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DFD1AF2A1E000C64B4E /* map 14-41-15-425.png */; };
-		49CE3E071AF2A1E000C64B4E /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3DFE1AF2A1E000C64B4E /* map.png */; };
+		49CE3E181AF2A99000C64B4E /* arena 14-41-15-427.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0A1AF2A99000C64B4E /* arena 14-41-15-427.jpg */; };
+		49CE3E191AF2A99000C64B4E /* arruda 14-41-15-410.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0B1AF2A99000C64B4E /* arruda 14-41-15-410.jpg */; };
+		49CE3E1A1AF2A99000C64B4E /* botaoenviar.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0C1AF2A99000C64B4E /* botaoenviar.png */; };
+		49CE3E1B1AF2A99000C64B4E /* botaohome.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0D1AF2A99000C64B4E /* botaohome.png */; };
+		49CE3E1C1AF2A99000C64B4E /* botaomapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0E1AF2A99000C64B4E /* botaomapa.png */; };
+		49CE3E1D1AF2A99000C64B4E /* botaorefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0F1AF2A99000C64B4E /* botaorefresh.png */; };
+		49CE3E1E1AF2A99000C64B4E /* botaorelato.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E101AF2A99000C64B4E /* botaorelato.png */; };
+		49CE3E1F1AF2A99000C64B4E /* botaovoltar.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E111AF2A99000C64B4E /* botaovoltar.png */; };
+		49CE3E201AF2A99000C64B4E /* ilha 14-41-15-438.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E121AF2A99000C64B4E /* ilha 14-41-15-438.jpg */; };
+		49CE3E211AF2A99000C64B4E /* splasscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E131AF2A99000C64B4E /* splasscreen.png */; };
+		49CE3E221AF2A99000C64B4E /* telaestadio.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E141AF2A99000C64B4E /* telaestadio.png */; };
+		49CE3E231AF2A99000C64B4E /* telamapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E151AF2A99000C64B4E /* telamapa.png */; };
+		49CE3E241AF2A99000C64B4E /* telarelato1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E161AF2A99000C64B4E /* telarelato1.png */; };
+		49CE3E251AF2A99000C64B4E /* telarelato2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E171AF2A99000C64B4E /* telarelato2.png */; };
 		49E028851AF2906300E628EC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E028841AF2906300E628EC /* NotificationCenter.framework */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
@@ -65,15 +70,20 @@
 		00ECD00D1AF00F26001021CD /* CloudProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudProvider.m; sourceTree = "<group>"; };
 		00ECD00F1AF01F18001021CD /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
 		00ECD0101AF01F18001021CD /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
-		49CE3DF61AF2A1E000C64B4E /* arena 14-41-15-427.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arena 14-41-15-427.jpg"; path = "resources/arena 14-41-15-427.jpg"; sourceTree = "<group>"; };
-		49CE3DF71AF2A1E000C64B4E /* arruda 14-41-15-410.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arruda 14-41-15-410.jpg"; path = "resources/arruda 14-41-15-410.jpg"; sourceTree = "<group>"; };
-		49CE3DF81AF2A1E000C64B4E /* botaohome 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "botaohome 2.png"; path = "resources/botaohome 2.png"; sourceTree = "<group>"; };
-		49CE3DF91AF2A1E000C64B4E /* botaomapa 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "botaomapa 2.png"; path = "resources/botaomapa 2.png"; sourceTree = "<group>"; };
-		49CE3DFA1AF2A1E000C64B4E /* botaorefresh 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "botaorefresh 2.png"; path = "resources/botaorefresh 2.png"; sourceTree = "<group>"; };
-		49CE3DFB1AF2A1E000C64B4E /* botaorelato 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "botaorelato 2.png"; path = "resources/botaorelato 2.png"; sourceTree = "<group>"; };
-		49CE3DFC1AF2A1E000C64B4E /* ilha 14-41-15-438.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ilha 14-41-15-438.jpg"; path = "resources/ilha 14-41-15-438.jpg"; sourceTree = "<group>"; };
-		49CE3DFD1AF2A1E000C64B4E /* map 14-41-15-425.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map 14-41-15-425.png"; path = "resources/map 14-41-15-425.png"; sourceTree = "<group>"; };
-		49CE3DFE1AF2A1E000C64B4E /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = resources/map.png; sourceTree = "<group>"; };
+		49CE3E0A1AF2A99000C64B4E /* arena 14-41-15-427.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arena 14-41-15-427.jpg"; path = "resources/arena 14-41-15-427.jpg"; sourceTree = "<group>"; };
+		49CE3E0B1AF2A99000C64B4E /* arruda 14-41-15-410.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arruda 14-41-15-410.jpg"; path = "resources/arruda 14-41-15-410.jpg"; sourceTree = "<group>"; };
+		49CE3E0C1AF2A99000C64B4E /* botaoenviar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaoenviar.png; path = resources/botaoenviar.png; sourceTree = "<group>"; };
+		49CE3E0D1AF2A99000C64B4E /* botaohome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaohome.png; path = resources/botaohome.png; sourceTree = "<group>"; };
+		49CE3E0E1AF2A99000C64B4E /* botaomapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaomapa.png; path = resources/botaomapa.png; sourceTree = "<group>"; };
+		49CE3E0F1AF2A99000C64B4E /* botaorefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaorefresh.png; path = resources/botaorefresh.png; sourceTree = "<group>"; };
+		49CE3E101AF2A99000C64B4E /* botaorelato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaorelato.png; path = resources/botaorelato.png; sourceTree = "<group>"; };
+		49CE3E111AF2A99000C64B4E /* botaovoltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaovoltar.png; path = resources/botaovoltar.png; sourceTree = "<group>"; };
+		49CE3E121AF2A99000C64B4E /* ilha 14-41-15-438.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ilha 14-41-15-438.jpg"; path = "resources/ilha 14-41-15-438.jpg"; sourceTree = "<group>"; };
+		49CE3E131AF2A99000C64B4E /* splasscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splasscreen.png; path = resources/splasscreen.png; sourceTree = "<group>"; };
+		49CE3E141AF2A99000C64B4E /* telaestadio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telaestadio.png; path = resources/telaestadio.png; sourceTree = "<group>"; };
+		49CE3E151AF2A99000C64B4E /* telamapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telamapa.png; path = resources/telamapa.png; sourceTree = "<group>"; };
+		49CE3E161AF2A99000C64B4E /* telarelato1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telarelato1.png; path = resources/telarelato1.png; sourceTree = "<group>"; };
+		49CE3E171AF2A99000C64B4E /* telarelato2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telarelato2.png; path = resources/telarelato2.png; sourceTree = "<group>"; };
 		49E028841AF2906300E628EC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		49E69BE11AEF05F300D24A71 /* Zaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BE51AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,18 +120,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49CE3E081AF2A1E900C64B4E /* resources */ = {
+		49CE3E091AF2A97D00C64B4E /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				49CE3DF61AF2A1E000C64B4E /* arena 14-41-15-427.jpg */,
-				49CE3DF71AF2A1E000C64B4E /* arruda 14-41-15-410.jpg */,
-				49CE3DF81AF2A1E000C64B4E /* botaohome 2.png */,
-				49CE3DF91AF2A1E000C64B4E /* botaomapa 2.png */,
-				49CE3DFA1AF2A1E000C64B4E /* botaorefresh 2.png */,
-				49CE3DFB1AF2A1E000C64B4E /* botaorelato 2.png */,
-				49CE3DFC1AF2A1E000C64B4E /* ilha 14-41-15-438.jpg */,
-				49CE3DFD1AF2A1E000C64B4E /* map 14-41-15-425.png */,
-				49CE3DFE1AF2A1E000C64B4E /* map.png */,
+				49CE3E0A1AF2A99000C64B4E /* arena 14-41-15-427.jpg */,
+				49CE3E0B1AF2A99000C64B4E /* arruda 14-41-15-410.jpg */,
+				49CE3E0C1AF2A99000C64B4E /* botaoenviar.png */,
+				49CE3E0D1AF2A99000C64B4E /* botaohome.png */,
+				49CE3E0E1AF2A99000C64B4E /* botaomapa.png */,
+				49CE3E0F1AF2A99000C64B4E /* botaorefresh.png */,
+				49CE3E101AF2A99000C64B4E /* botaorelato.png */,
+				49CE3E111AF2A99000C64B4E /* botaovoltar.png */,
+				49CE3E121AF2A99000C64B4E /* ilha 14-41-15-438.jpg */,
+				49CE3E131AF2A99000C64B4E /* splasscreen.png */,
+				49CE3E141AF2A99000C64B4E /* telaestadio.png */,
+				49CE3E151AF2A99000C64B4E /* telamapa.png */,
+				49CE3E161AF2A99000C64B4E /* telarelato1.png */,
+				49CE3E171AF2A99000C64B4E /* telarelato2.png */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -129,7 +144,7 @@
 		49E69BD81AEF05F300D24A71 = {
 			isa = PBXGroup;
 			children = (
-				49CE3E081AF2A1E900C64B4E /* resources */,
+				49CE3E091AF2A97D00C64B4E /* resources */,
 				49E028841AF2906300E628EC /* NotificationCenter.framework */,
 				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
 				49FE4FCD1AF159E300AB6E02 /* MapKit.framework */,
@@ -297,17 +312,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49CE3E071AF2A1E000C64B4E /* map.png in Resources */,
-				49CE3E061AF2A1E000C64B4E /* map 14-41-15-425.png in Resources */,
-				49CE3DFF1AF2A1E000C64B4E /* arena 14-41-15-427.jpg in Resources */,
-				49CE3E001AF2A1E000C64B4E /* arruda 14-41-15-410.jpg in Resources */,
-				49CE3E051AF2A1E000C64B4E /* ilha 14-41-15-438.jpg in Resources */,
+				49CE3E241AF2A99000C64B4E /* telarelato1.png in Resources */,
+				49CE3E201AF2A99000C64B4E /* ilha 14-41-15-438.jpg in Resources */,
+				49CE3E211AF2A99000C64B4E /* splasscreen.png in Resources */,
+				49CE3E1B1AF2A99000C64B4E /* botaohome.png in Resources */,
+				49CE3E181AF2A99000C64B4E /* arena 14-41-15-427.jpg in Resources */,
+				49CE3E231AF2A99000C64B4E /* telamapa.png in Resources */,
+				49CE3E191AF2A99000C64B4E /* arruda 14-41-15-410.jpg in Resources */,
+				49CE3E251AF2A99000C64B4E /* telarelato2.png in Resources */,
 				49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */,
-				49CE3E031AF2A1E000C64B4E /* botaorefresh 2.png in Resources */,
+				49CE3E1C1AF2A99000C64B4E /* botaomapa.png in Resources */,
+				49CE3E221AF2A99000C64B4E /* telaestadio.png in Resources */,
+				49CE3E1F1AF2A99000C64B4E /* botaovoltar.png in Resources */,
 				49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */,
-				49CE3E041AF2A1E000C64B4E /* botaorelato 2.png in Resources */,
-				49CE3E011AF2A1E000C64B4E /* botaohome 2.png in Resources */,
-				49CE3E021AF2A1E000C64B4E /* botaomapa 2.png in Resources */,
+				49CE3E1A1AF2A99000C64B4E /* botaoenviar.png in Resources */,
+				49CE3E1D1AF2A99000C64B4E /* botaorefresh.png in Resources */,
+				49CE3E1E1AF2A99000C64B4E /* botaorelato.png in Resources */,
 				49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
