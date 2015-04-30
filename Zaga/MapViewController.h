@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate, MKMapViewDelegate>
+
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-@property(nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) MKAnnotationView *myAnnotation;
+
 @end

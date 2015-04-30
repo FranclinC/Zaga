@@ -37,6 +37,11 @@
 		49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF11AEF05F300D24A71 /* Images.xcassets */; };
 		49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */; };
 		49E69C011AEF05F300D24A71 /* ZagaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69C001AEF05F300D24A71 /* ZagaTests.m */; };
+		49EDE3BC1AF2BB010053660E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EDE3B91AF2BB010053660E /* CoreFoundation.framework */; };
+		49EDE3BD1AF2BB010053660E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EDE3BA1AF2BB010053660E /* CoreGraphics.framework */; };
+		49EDE3BE1AF2BB010053660E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EDE3BB1AF2BB010053660E /* UIKit.framework */; };
+		49EDE3C11AF2BB690053660E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EDE3C01AF2BB690053660E /* Location.m */; };
+		49EDE3C41AF2BB970053660E /* LocationDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EDE3C31AF2BB970053660E /* LocationDataController.m */; };
 		49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FE4FCD1AF159E300AB6E02 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +101,13 @@
 		49E69BFA1AEF05F300D24A71 /* ZagaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZagaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BFF1AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69C001AEF05F300D24A71 /* ZagaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZagaTests.m; sourceTree = "<group>"; };
+		49EDE3B91AF2BB010053660E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		49EDE3BA1AF2BB010053660E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49EDE3BB1AF2BB010053660E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		49EDE3BF1AF2BB690053660E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		49EDE3C01AF2BB690053660E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		49EDE3C21AF2BB970053660E /* LocationDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataController.h; sourceTree = "<group>"; };
+		49EDE3C31AF2BB970053660E /* LocationDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataController.m; sourceTree = "<group>"; };
 		49FE4FCD1AF159E300AB6E02 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -104,6 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EDE3BC1AF2BB010053660E /* CoreFoundation.framework in Frameworks */,
+				49EDE3BD1AF2BB010053660E /* CoreGraphics.framework in Frameworks */,
+				49EDE3BE1AF2BB010053660E /* UIKit.framework in Frameworks */,
 				49E028851AF2906300E628EC /* NotificationCenter.framework in Frameworks */,
 				49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */,
 				00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */,
@@ -144,11 +159,14 @@
 		49E69BD81AEF05F300D24A71 = {
 			isa = PBXGroup;
 			children = (
-				49CE3E091AF2A97D00C64B4E /* resources */,
+				49EDE3B91AF2BB010053660E /* CoreFoundation.framework */,
+				49EDE3BA1AF2BB010053660E /* CoreGraphics.framework */,
+				49EDE3BB1AF2BB010053660E /* UIKit.framework */,
 				49E028841AF2906300E628EC /* NotificationCenter.framework */,
 				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
 				49FE4FCD1AF159E300AB6E02 /* MapKit.framework */,
 				00ECD0071AEFF988001021CD /* README.md */,
+				49CE3E091AF2A97D00C64B4E /* resources */,
 				49E69BE21AEF05F300D24A71 /* Products */,
 				49E69BE31AEF05F300D24A71 /* Zaga */,
 				49E69BFD1AEF05F300D24A71 /* ZagaTests */,
@@ -190,6 +208,10 @@
 				00ECD00D1AF00F26001021CD /* CloudProvider.m */,
 				00ECD00F1AF01F18001021CD /* Report.h */,
 				00ECD0101AF01F18001021CD /* Report.m */,
+				49EDE3BF1AF2BB690053660E /* Location.h */,
+				49EDE3C01AF2BB690053660E /* Location.m */,
+				49EDE3C21AF2BB970053660E /* LocationDataController.h */,
+				49EDE3C31AF2BB970053660E /* LocationDataController.m */,
 			);
 			path = Zaga;
 			sourceTree = "<group>";
@@ -348,8 +370,10 @@
 			files = (
 				00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
+				49EDE3C41AF2BB970053660E /* LocationDataController.m in Sources */,
 				005B1B541AF02C3200A318CE /* MapViewController.m in Sources */,
 				00ECD0111AF01F18001021CD /* Report.m in Sources */,
+				49EDE3C11AF2BB690053660E /* Location.m in Sources */,
 				005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */,
 				005B1B531AF02C3200A318CE /* MainViewController.m in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
