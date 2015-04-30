@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "Relato.h"
+#import "Report.h"
 #import <UIKit/UIKit.h>
 #import "GlobalObjects.h"
 
