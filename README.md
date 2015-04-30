@@ -9,15 +9,6 @@ App Store description:
 ## Languages
 
 * Portuguese
-* English
-
-### Build
-
-To install the [Cocoapods] dependencies, run:
-
-`$ pod install`
-
-Open `Zaga.xcworkspace` and build!
 
 ## Art & Logo
 
@@ -26,5 +17,3 @@ Open `Zaga.xcworkspace` and build!
 ## Copyright
 
 &copy; 2015 (?). All Rights Reserved.
-
-[Cocoapods]: http://cocoapods.org

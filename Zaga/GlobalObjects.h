@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Relato.h"
+#import "Report.h"
 
 @interface GlobalObjects : NSObject
 

@@ -17,7 +17,8 @@
 		00ECD0081AEFF988001021CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
 		00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD00D1AF00F26001021CD /* CloudProvider.m */; };
-		00ECD0111AF01F18001021CD /* Relato.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Relato.m */; };
+		00ECD0111AF01F18001021CD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Report.m */; };
+		49E028851AF2906300E628EC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E028841AF2906300E628EC /* NotificationCenter.framework */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
 		49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BEE1AEF05F300D24A71 /* Main.storyboard */; };
@@ -60,8 +61,9 @@
 		00ECD00A1AEFF9AF001021CD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		00ECD00C1AF00F26001021CD /* CloudProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudProvider.h; sourceTree = "<group>"; };
 		00ECD00D1AF00F26001021CD /* CloudProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudProvider.m; sourceTree = "<group>"; };
-		00ECD00F1AF01F18001021CD /* Relato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relato.h; sourceTree = "<group>"; };
-		00ECD0101AF01F18001021CD /* Relato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relato.m; sourceTree = "<group>"; };
+		00ECD00F1AF01F18001021CD /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		00ECD0101AF01F18001021CD /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		49E028841AF2906300E628EC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		49E69BE11AEF05F300D24A71 /* Zaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E69BE51AEF05F300D24A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E69BE61AEF05F300D24A71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E028851AF2906300E628EC /* NotificationCenter.framework in Frameworks */,
 				49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */,
 				00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */,
 			);
@@ -103,6 +106,7 @@
 		49E69BD81AEF05F300D24A71 = {
 			isa = PBXGroup;
 			children = (
+				49E028841AF2906300E628EC /* NotificationCenter.framework */,
 				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
 				49FE4FCD1AF159E300AB6E02 /* MapKit.framework */,
 				00ECD0071AEFF988001021CD /* README.md */,
@@ -301,9 +305,8 @@
 			files = (
 				00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
-				00ECD0081AEFF988001021CD /* README.md in Sources */,
 				005B1B541AF02C3200A318CE /* MapViewController.m in Sources */,
-				00ECD0111AF01F18001021CD /* Relato.m in Sources */,
+				00ECD0111AF01F18001021CD /* Report.m in Sources */,
 				005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */,
 				005B1B531AF02C3200A318CE /* MainViewController.m in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
