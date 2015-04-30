@@ -13,7 +13,7 @@
 		005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4B1AF02C3200A318CE /* ReportViewController.m */; };
 		005B1B561AF02C3200A318CE /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4D1AF02C3200A318CE /* SelectViewController.m */; };
 		005B1B571AF02C3200A318CE /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4F1AF02C3200A318CE /* StadiumViewController.m */; };
-		00ECD0081AEFF988001021CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
+		00ECD0081AEFF988001021CD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 00ECD0071AEFF988001021CD /* README.md */; };
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
 		00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD00D1AF00F26001021CD /* CloudProvider.m */; };
 		00ECD0111AF01F18001021CD /* Relato.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Relato.m */; };
@@ -261,6 +261,7 @@
 			files = (
 				49E69BF01AEF05F300D24A71 /* Main.storyboard in Resources */,
 				49E69BF51AEF05F300D24A71 /* LaunchScreen.xib in Resources */,
+				00ECD0081AEFF988001021CD /* README.md in Resources */,
 				49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +282,6 @@
 			files = (
 				00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
-				00ECD0081AEFF988001021CD /* README.md in Sources */,
 				005B1B541AF02C3200A318CE /* MapViewController.m in Sources */,
 				00ECD0111AF01F18001021CD /* Relato.m in Sources */,
 				005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */,
