@@ -10,6 +10,8 @@
 
 @interface MapViewController ()
 
+@property (nonatomic, strong) MKPointAnnotation *annotation;
+
 @end
 
 @implementation MapViewController
@@ -19,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    _annotation = [[MKPointAnnotation alloc] init];
     _searchField.delegate = self;
     _mapView.delegate = self;
     
@@ -38,6 +40,18 @@
             
         }
     }
+    MKCoordinateRegion region;
+    CLLocationCoordinate2D newLocation = CLLocationCoordinate2DMake(-8.0620769, -34.9031353);
+    region.center = newLocation;
+    //MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [_annotation setCoordinate:newLocation];
+    [_mapView addAnnotation:_annotation];
+       
+    MKMapRect mr = [_mapView visibleMapRect];
+    MKMapPoint pt = MKMapPointForCoordinate([_annotation coordinate]);
+    mr.origin.x = pt.x - mr.size.width * 0.5;
+    mr.origin.y = pt.y - mr.size.height *0.25;
+    [_mapView setVisibleMapRect:mr animated:YES];
     
     [_locationManager startUpdatingLocation];
     
@@ -65,14 +79,18 @@
 }
 
 
+
+
 //It zoom in in the location
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    
     MKCoordinateRegion mapRegion;
-    mapRegion.center = _mapView.userLocation.coordinate;
+    mapRegion.center = mapView.userLocation.coordinate;
     mapRegion.span.latitudeDelta = 0.03;
     mapRegion.span.longitudeDelta = 0.03;
     
-    [_mapView setRegion:mapRegion animated:YES];
+    [mapView setRegion:mapRegion animated:YES];
+    
 }
 
 
@@ -89,13 +107,15 @@
         CLLocationCoordinate2D newLocation = [placemark.location coordinate];
         region.center = [(CLCircularRegion *) placemark.region center];
         
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        [annotation setCoordinate:newLocation];
-        [annotation setTitle:_searchField.text];
-        [_mapView addAnnotation: annotation];
+        //MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        [_mapView removeAnnotation:_annotation];
+        [_annotation setCoordinate:newLocation];
+        [_annotation setTitle:_searchField.text];
+        [_mapView addAnnotation: _annotation];
+        //        [_mapView removeAnnotation:_annotation];
         
         MKMapRect mr = [_mapView visibleMapRect];
-        MKMapPoint pt = MKMapPointForCoordinate([annotation coordinate]);
+        MKMapPoint pt = MKMapPointForCoordinate([_annotation coordinate]);
         mr.origin.x = pt.x - mr.size.width * 0.5;
         mr.origin.y = pt.y - mr.size.height *0.25;
         [_mapView setVisibleMapRect:mr animated:YES];
