@@ -37,7 +37,12 @@
                                    selector:@selector(checkStatus)
                                    userInfo:nil repeats:YES];
     
+    [self.mapView showsUserLocation];
+    
     self.mapView.delegate = self;
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    
 }
 
 -(void) addAnnotation{
