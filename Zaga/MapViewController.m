@@ -1,99 +1,112 @@
 //
-//  MapViewController.m
-//  Zaga
+//  ViewController.m
+//  MiniChallenge
 //
-//  Created by Miguel Araújo on 4/28/15.
-//  Copyright (c) 2015 Miguel Araújo. All rights reserved.
+//  Created by Franclin Cabral on 29/04/15.
+//  Copyright (c) 2015 Franclin Cabral. All rights reserved.
 //
 
 #import "MapViewController.h"
-#import "LocationDataController.h"
-#import "Location.h"
-#import "Report.h"
-
-#define METERS_PER_MILE 1609.344
-#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface MapViewController ()
-
-@property (nonatomic) CGPoint centerOffset;
-@property (weak, nonatomic) IBOutlet MKMapView *mapview;
-@property (nonatomic) UIImage  *image;
-@property (weak, nonatomic) IBOutlet UIButton *report;
 
 @end
 
 @implementation MapViewController
 
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
-    [self.mapView showsUserLocation];
-    self.mapView.delegate = self;
+    // Do any additional setup after loading the view, typically from a nib.
     
-    CLLocationCoordinate2D myCoordinate = {-8.06260769, -34.9031353};
-    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = myCoordinate;
-    pin.title = @"Policia";
-    [self.mapview addAnnotation:pin];
+    _searchField.delegate = self;
+    _mapView.delegate = self;
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    
+    if(IS_OS_8_OR_LATER){
+        NSUInteger code = [CLLocationManager authorizationStatus];
+        if (code == kCLAuthorizationStatusNotDetermined && ([_locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])){
+            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]){
+                [_locationManager requestAlwaysAuthorization];
+            }else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUsageDescription"]){
+                [self.locationManager  requestWhenInUseAuthorization];
+            }else{
+                NSLog(@"Info.plist does not contain NSLocaionAlwaysUsageDescription or NSLocationWhenInUsageDescription");
+            }
+            
+        }
+    }
+    
+    [_locationManager startUpdatingLocation];
+    
+}
+
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+    }
+}
+
+
+//It zoom in in the location
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = _mapView.userLocation.coordinate;
+    mapRegion.span.latitudeDelta = 0.03;
+    mapRegion.span.longitudeDelta = 0.03;
+    
+    [_mapView setRegion:mapRegion animated:YES];
+}
+
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    [_searchField resignFirstResponder];
+    
+    CLGeocoder *geocoder =[[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:_searchField.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        
+        MKCoordinateRegion region;
+        CLLocationCoordinate2D newLocation = [placemark.location coordinate];
+        region.center = [(CLCircularRegion *) placemark.region center];
+        
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        [annotation setCoordinate:newLocation];
+        [annotation setTitle:_searchField.text];
+        [_mapView addAnnotation: annotation];
+        
+        MKMapRect mr = [_mapView visibleMapRect];
+        MKMapPoint pt = MKMapPointForCoordinate([annotation coordinate]);
+        mr.origin.x = pt.x - mr.size.width * 0.5;
+        mr.origin.y = pt.y - mr.size.height *0.25;
+        [_mapView setVisibleMapRect:mr animated:YES];
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-{
-    // If it's the user location, just return nil.
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
-    {
-        // Try to dequeue an existing pin view first.
-        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-        if (!pinView)
-        {
-            // If an existing pin view was not available, create one.
-            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            //pinView.animatesDrop = YES;
-            pinView.canShowCallout = YES;
-            pinView.image = [UIImage imageNamed:@"polícia.png"];
-            pinView.calloutOffset = CGPointMake(0, 32);
-        } else {
-            pinView.annotation = annotation;
-        }
-        
-        return pinView;
-    }
-    
-    return nil;
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    LocationDataController *model = [[LocationDataController alloc]init];
-    Location *p = [model getPointOfInterest];
-    CLLocationCoordinate2D poooiCoodinates;
-    poooiCoodinates.latitude = p.latitude;
-    poooiCoodinates.longitude = p.longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(poooiCoodinates, 900, 1050);
-    [self.mapview setRegion:viewRegion animated:YES];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
 }
 
 @end
