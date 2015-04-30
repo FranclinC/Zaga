@@ -1,9 +1,9 @@
 //
-//  ViewController.m
-//  MiniChallenge
+//  MapViewController.m
+//  Zaga
 //
-//  Created by Franclin Cabral on 29/04/15.
-//  Copyright (c) 2015 Franclin Cabral. All rights reserved.
+//  Created by Miguel Araújo on 4/28/15.
+//  Copyright (c) 2015 Miguel Araújo. All rights reserved.
 //
 
 #import "MapViewController.h"
