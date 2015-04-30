@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>s
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
-
+@interface MapViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property(nonatomic, retain) CLLocationManager *locationManager;
 @end
