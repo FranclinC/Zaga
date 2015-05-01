@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="C6D-88-xBS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8qM-vz-bsd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Estadios-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
@@ -12,40 +12,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" id="GQN-3n-hhI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Sn-LH-XK9">
-                                <rect key="frame" x="0.0" y="44" width="320" height="470"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="553"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="74b-u1-reJ"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="AXC-LB-7P6"/>
+                                </connections>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" id="2gx-v5-boo">
-                                <rect key="frame" x="0.0" y="613" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Item" id="8Tv-5C-PWO"/>
-                                    <tabBarItem title="Item" id="Lr1-c5-WjA"/>
-                                </items>
-                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Estadios" id="Vaz-mQ-IrK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="Item1" destination="8Tv-5C-PWO" id="iFl-cS-vKy"/>
-                        <outlet property="SearchBar" destination="GQN-3n-hhI" id="tE8-hk-Mfz"/>
-                        <outlet property="TabBar" destination="8Tv-5C-PWO" id="8lf-7d-BeD"/>
-                        <outlet property="TableView" destination="8Sn-LH-XK9" id="Ll7-AG-8ck"/>
-                        <outlet property="item2" destination="Lr1-c5-WjA" id="GO9-xg-J7B"/>
+                        <outlet property="TableView" destination="8Sn-LH-XK9" id="9XL-PK-KiO"/>
+                        <outlet property="tableView" destination="8Sn-LH-XK9" id="Egb-hp-Xc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="319"/>
+            <point key="canvasLocation" x="1532.5" y="1941.5"/>
         </scene>
         <!--Stadium View Controller-->
         <scene sceneID="WAh-ew-uEX">
@@ -60,9 +48,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dt7-13-C2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="318"/>
+            <point key="canvasLocation" x="873.5" y="321.5"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Mapa-->
         <scene sceneID="av6-dT-ECb">
             <objects>
                 <viewController id="C6D-88-xBS" customClass="MapViewController" sceneMemberID="viewController">
@@ -70,50 +58,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map.png" id="KgG-mX-Zqf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="3Zy-Ee-Qmp">
-                                <rect key="frame" x="0.0" y="44" width="375" height="522"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P6w-mj-WVG">
-                                <rect key="frame" x="0.0" y="566" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xmh-fC-ANQ">
-                                <rect key="frame" x="94" y="623" width="46" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PUg-g8-0nu">
-                                <rect key="frame" x="233" y="623" width="46" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xxs-Ss-4b9">
-                                <rect key="frame" x="164" y="623" width="46" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Mapa" id="Oob-5h-hPq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="3Zy-Ee-Qmp" id="TbD-Oo-WcW"/>
+                        <outlet property="mapview" destination="3Zy-Ee-Qmp" id="drR-q6-QnG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smd-XG-Zg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.5" y="331.5"/>
+            <point key="canvasLocation" x="1532.5" y="1059.5"/>
         </scene>
         <!--Select View Controller-->
         <scene sceneID="TMz-JE-Oay">
@@ -130,6 +91,27 @@
             </objects>
             <point key="canvasLocation" x="1456" y="322"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BSB-cB-rQ3">
+            <objects>
+                <tabBarController autoresizesArchivedViewToFullSize="NO" id="liH-L3-f8n" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f1A-vD-JP2"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dOx-tn-jct">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="C6D-88-xBS" kind="relationship" relationship="viewControllers" id="Zae-Ta-LJ1"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="mWw-XN-ZKk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FzT-EK-pxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="1315"/>
+        </scene>
         <!--Report View Controller-->
         <scene sceneID="vb3-dJ-RSu">
             <objects>
@@ -145,10 +127,24 @@
             </objects>
             <point key="canvasLocation" x="1872" y="325"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nEC-Rs-et7">
+            <objects>
+                <navigationController id="8qM-vz-bsd" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dmz-FE-f96">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="liH-L3-f8n" kind="relationship" relationship="rootViewController" id="RbY-gK-E4f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZeA-fZ-VGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="1315"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="map.png" width="750" height="1334"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

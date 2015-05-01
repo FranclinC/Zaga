@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreFoundation/CoreFoundation.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *TableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
-@property (weak, nonatomic) IBOutlet UITabBarItem *TabBar;
-@property (weak, nonatomic) IBOutlet UITabBarItem *Item1;
-@property (weak, nonatomic) IBOutlet UITabBarItem *item2;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
