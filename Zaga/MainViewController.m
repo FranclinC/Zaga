@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-
+#import "MapViewController.h"
 @interface MainViewController ()
 {
     NSArray *tableData;
@@ -47,8 +47,9 @@
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     return cell;
 }
-
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [MapViewController setMapIndex:indexPath.row ];
+}
 /*
 #pragma mark - Navigation
 

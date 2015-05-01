@@ -17,4 +17,6 @@
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) MKAnnotationView *myAnnotation;
 
++(void)setMapIndex:(int)val;
+
 @end

@@ -29,6 +29,12 @@
 
 @implementation MapViewController
 
+static int mapIndex =1;
+
++(void)setMapIndex:(int)val{
+    mapIndex = val;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -36,7 +42,7 @@
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager requestAlwaysAuthorization];
+    //[self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
     [self.mapView showsUserLocation];
     self.mapView.delegate = self;
@@ -48,12 +54,18 @@
                           [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
     _nomesEstadios = [[NSArray alloc]initWithObjects:@"Arena PE",@"Ilha do Retiro",@"Arruda", nil];
     
-    CLLocationCoordinate2D myCoordinate = {-8.06260769, -34.9031353};
-    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = myCoordinate;
-    pin.title = @"Policia";
-    [self.mapview addAnnotation:pin];
     
+    //for (int i = 0; i<3; i++) {
+    
+        
+    //}
+    
+}
+
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,29 +73,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    // If it's the user location, just return nil.
+    // If the annotation is the user location, just return nil.
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
-
+    
     // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    if ([annotation isKindOfClass:[MKAnnotationView class]])
     {
         // Try to dequeue an existing pin view first.
-        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
+                       dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        
         if (!pinView)
         {
             // If an existing pin view was not available, create one.
-            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            //pinView.animatesDrop = YES;
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                      reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.pinColor = MKPinAnnotationColorRed;
+            pinView.animatesDrop = YES;
+            pinView.canShowCallout = YES;
+            
+            // If appropriate, customize the callout by adding accessory views (code not shown).
         }
-        
-        pinView.canShowCallout = YES;
-        pinView.image = [UIImage imageNamed:@"polícia.png"];
-        pinView.calloutOffset = CGPointMake(0, 32);
-        
+        else
+            pinView.annotation = annotation;
         
         return pinView;
     }
@@ -92,12 +108,15 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    
-    
-    CLLocationCoordinate2D myCoordinate = {-8.06260769, -34.9031353};
-  
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 900, 1050);
+    CLLocationCoordinate2D myCoordinate = {[[_latituteEstadios objectAtIndex:mapIndex] doubleValue], [[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]};
+
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1050, 1050);
     [self.mapview setRegion:viewRegion animated:YES];
+    
+    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+    pin.coordinate = myCoordinate;
+    pin.title = [_nomesEstadios objectAtIndex:mapIndex];
+    [self.mapview addAnnotation:pin];
 }
 
 
