@@ -107,14 +107,12 @@ static int mapIndex =1;
         if (!pinView)
         {
             // If an existing pin view was not available, create one.
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                                      reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
             pinView.canShowCallout = YES;
             pinView.pinColor = MKPinAnnotationColorGreen;
             pinView.leftCalloutAccessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"botahome.png"]];
-            NSLog(@"TA ENTRANDO AQUI!");
             
             // If appropriate, customize the callout by adding accessory views (code not shown).
         }
