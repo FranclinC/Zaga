@@ -23,6 +23,7 @@
 @property (strong,nonatomic) NSArray* latituteEstadios;
 @property (strong,nonatomic) NSArray* longitudeEstadios;
 @property (strong ,nonatomic) NSArray* nomesEstadios;
+@property MKPointAnnotation * pin;
 
 
 @end
@@ -112,11 +113,11 @@ static int mapIndex =1;
 
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1050, 1050);
     [self.mapview setRegion:viewRegion animated:YES];
-    
-    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = myCoordinate;
-    pin.title = [_nomesEstadios objectAtIndex:mapIndex];
-    [self.mapview addAnnotation:pin];
+    [self.mapview removeAnnotation:_pin];
+    _pin = [[MKPointAnnotation alloc] init];
+    _pin.coordinate = myCoordinate;
+    _pin.title = [_nomesEstadios objectAtIndex:mapIndex];
+    [self.mapview addAnnotation:_pin];
 }
 
 

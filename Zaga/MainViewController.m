@@ -49,6 +49,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [MapViewController setMapIndex:indexPath.row ];
+    
+    [self.tabBarController setSelectedIndex:0];
 }
 /*
 #pragma mark - Navigation

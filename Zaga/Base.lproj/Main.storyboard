@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Sn-LH-XK9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="mapaViews" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Sn-LH-XK9">
                                 <rect key="frame" x="0.0" y="66" width="375" height="553"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,9 +59,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="3Zy-Ee-Qmp">
-                                <rect key="frame" x="0.0" y="68" width="375" height="504"/>
+                                <rect key="frame" x="0.0" y="63" width="375" height="509"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FiF-ck-r3z">
+                                <rect key="frame" x="0.0" y="572" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -91,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="1456" y="322"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabBar-->
         <scene sceneID="BSB-cB-rQ3">
             <objects>
-                <tabBarController autoresizesArchivedViewToFullSize="NO" id="liH-L3-f8n" sceneMemberID="viewController">
+                <tabBarController autoresizesArchivedViewToFullSize="NO" title="TabBar" id="liH-L3-f8n" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="f1A-vD-JP2"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
