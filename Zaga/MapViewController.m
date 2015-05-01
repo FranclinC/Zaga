@@ -7,12 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import "LocationDataController.h"
-#import "Location.h"
-#import "Report.h"
-
-#define METERS_PER_MILE 1609.344
-#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface MapViewController ()
 
@@ -69,10 +63,6 @@ static int mapIndex =1;
     return UIInterfaceOrientationMaskPortrait;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
@@ -104,8 +94,6 @@ static int mapIndex =1;
         
         return pinView;
     }
-    
-    return nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -121,5 +109,10 @@ static int mapIndex =1;
 }
 
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end
