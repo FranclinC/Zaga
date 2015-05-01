@@ -21,6 +21,7 @@
 @property MKPointAnnotation * pin;
 @property (weak, nonatomic) IBOutlet UIButton *refresh;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+@property (weak, nonatomic) IBOutlet UILabel *Title;
 
 
 @end
@@ -80,11 +81,12 @@ static int mapIndex =1;
                 anno.coordinate = record.position.coordinate;
                 anno.title = [_nomeRelatos objectAtIndex:[record.type integerValue]];
                 [self.mapview addAnnotation:anno];
-                 NSLog(@"Pin!! %@",anno.title);
             }
+            
             [self.tabBarController setSelectedIndex:1];
             _loading.hidden = YES;
-            [self viewDidAppear:YES];
+            [self.mapview addAnnotation:_pin];
+            //[self viewDidAppear:YES];
         }
         });
     })];
@@ -98,26 +100,28 @@ static int mapIndex =1;
         return nil;
     
     // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKAnnotationView class]])
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
     {
         // Try to dequeue an existing pin view first.
-        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
-                       dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        MKAnnotationView*    pinView = (MKAnnotationView*)[mapView
+dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
         if (!pinView)
         {
             // If an existing pin view was not available, create one.
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            pinView.pinColor = MKPinAnnotationColorRed;
-            pinView.animatesDrop = YES;
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.canShowCallout = YES;
-            pinView.pinColor = MKPinAnnotationColorGreen;
-            pinView.leftCalloutAccessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"botahome.png"]];
+            
+            //pinView.leftCalloutAccessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"policia"]];
+            NSLog(@"Era pra tar com uma imagem");
             
             // If appropriate, customize the callout by adding accessory views (code not shown).
         }
         else
             pinView.annotation = annotation;
+        
+        pinView.image = [UIImage imageNamed:@"Policia"];
+        NSLog(@"Era pra tar com uma imagem");
         
         return pinView;
     }
@@ -134,7 +138,8 @@ static int mapIndex =1;
     _pin = [[MKPointAnnotation alloc] init];
     _pin.coordinate = myCoordinate;
     _pin.title = [_nomesEstadios objectAtIndex:mapIndex];
-    [self.mapview addAnnotation:_pin];
+    [self showRelatos];
+    _Title.text =[_nomesEstadios objectAtIndex:mapIndex];
         
 }
 
