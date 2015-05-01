@@ -13,7 +13,6 @@
 		0023FCC41AF403B600C501AF /* ilha.png in Resources */ = {isa = PBXBuildFile; fileRef = 0023FCC11AF403B600C501AF /* ilha.png */; };
 		0023FCC61AF40FD500C501AF /* policia-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0023FCC51AF40FD500C501AF /* policia-2.png */; };
 		005B1B511AF02C3200A318CE /* GlobalObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B441AF02C3200A318CE /* GlobalObjects.m */; };
-		005B1B531AF02C3200A318CE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B471AF02C3200A318CE /* MainViewController.m */; };
 		005B1B541AF02C3200A318CE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B491AF02C3200A318CE /* MapViewController.m */; };
 		005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4B1AF02C3200A318CE /* ReportViewController.m */; };
 		005B1B561AF02C3200A318CE /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1B4D1AF02C3200A318CE /* SelectViewController.m */; };
@@ -33,7 +32,6 @@
 		49CE3E231AF2A99000C64B4E /* telamapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E151AF2A99000C64B4E /* telamapa.png */; };
 		49CE3E241AF2A99000C64B4E /* telarelato1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E161AF2A99000C64B4E /* telarelato1.png */; };
 		49CE3E251AF2A99000C64B4E /* telarelato2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E171AF2A99000C64B4E /* telarelato2.png */; };
-		49E028851AF2906300E628EC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E028841AF2906300E628EC /* NotificationCenter.framework */; };
 		49E69BE71AEF05F300D24A71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE61AEF05F300D24A71 /* main.m */; };
 		49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E69BE91AEF05F300D24A71 /* AppDelegate.m */; };
 		49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E69BF11AEF05F300D24A71 /* Images.xcassets */; };
@@ -63,8 +61,6 @@
 		0023FCC51AF40FD500C501AF /* policia-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "policia-2.png"; path = "Zaga/Images.xcassets/Policia.imageset/policia-2.png"; sourceTree = "<group>"; };
 		005B1B431AF02C3200A318CE /* GlobalObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalObjects.h; sourceTree = "<group>"; };
 		005B1B441AF02C3200A318CE /* GlobalObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalObjects.m; sourceTree = "<group>"; };
-		005B1B461AF02C3200A318CE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		005B1B471AF02C3200A318CE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		005B1B481AF02C3200A318CE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		005B1B491AF02C3200A318CE /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		005B1B4A1AF02C3200A318CE /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
@@ -118,7 +114,6 @@
 				49EDE3BC1AF2BB010053660E /* CoreFoundation.framework in Frameworks */,
 				49EDE3BD1AF2BB010053660E /* CoreGraphics.framework in Frameworks */,
 				49EDE3BE1AF2BB010053660E /* UIKit.framework in Frameworks */,
-				49E028851AF2906300E628EC /* NotificationCenter.framework in Frameworks */,
 				49FE4FCE1AF159E300AB6E02 /* MapKit.framework in Frameworks */,
 				00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */,
 			);
@@ -205,8 +200,6 @@
 				0023FCBC1AF30BDE00C501AF /* Main.storyboard */,
 				4980CFF51AF42221001E5F96 /* MainTableViewController.h */,
 				4980CFF61AF42221001E5F96 /* MainTableViewController.m */,
-				005B1B461AF02C3200A318CE /* MainViewController.h */,
-				005B1B471AF02C3200A318CE /* MainViewController.m */,
 				005B1B481AF02C3200A318CE /* MapViewController.h */,
 				005B1B491AF02C3200A318CE /* MapViewController.m */,
 				00ECD00F1AF01F18001021CD /* Report.h */,
@@ -382,7 +375,6 @@
 				005B1B541AF02C3200A318CE /* MapViewController.m in Sources */,
 				00ECD0111AF01F18001021CD /* Report.m in Sources */,
 				005B1B551AF02C3200A318CE /* ReportViewController.m in Sources */,
-				005B1B531AF02C3200A318CE /* MainViewController.m in Sources */,
 				49E69BE71AEF05F300D24A71 /* main.m in Sources */,
 				005B1B561AF02C3200A318CE /* SelectViewController.m in Sources */,
 				005B1B571AF02C3200A318CE /* StadiumViewController.m in Sources */,
