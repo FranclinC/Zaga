@@ -49,7 +49,6 @@ static int mapIndex =1;
                           [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
     _nomesEstadios = [[NSArray alloc]initWithObjects:@"Arena PE",@"Ilha do Retiro",@"Arruda", nil];
     
-    
     //for (int i = 0; i<3; i++) {
     
         
@@ -63,6 +62,10 @@ static int mapIndex =1;
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
@@ -94,6 +97,7 @@ static int mapIndex =1;
         
         return pinView;
     }
+    return nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -109,10 +113,5 @@ static int mapIndex =1;
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
