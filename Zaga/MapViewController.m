@@ -51,7 +51,7 @@ static int mapIndex =1;
     _longitudeEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -35.008205],
                           [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
     _nomesEstadios = [[NSArray alloc]initWithObjects:@"Arena PE",@"Ilha do Retiro",@"Arruda", nil];
-    _nomeRelatos = [[NSArray alloc] initWithObjects:@"Policia",@"Assaltos",@"Tumulto",@"Organizadas", nil];
+    _nomeRelatos = [[NSArray alloc] initWithObjects:@"Polícia",@"Assaltos",@"Briga",@"Organizadas", nil];
     //Init Cloud
     _cp = [[CloudProvider alloc] init];
     _loading.hidden = YES;
@@ -112,17 +112,21 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.canShowCallout = YES;
             
-            //pinView.leftCalloutAccessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"policia"]];
-            NSLog(@"Era pra tar com uma imagem");
-            
-            // If appropriate, customize the callout by adding accessory views (code not shown).
-        }
-        else
+        }else
             pinView.annotation = annotation;
         
-        pinView.image = [UIImage imageNamed:@"Policia"];
-        NSLog(@"Era pra tar com uma imagem");
-        
+        MKPointAnnotation* pointA = (MKPointAnnotation*)annotation;
+        if([pointA.title isEqualToString:@"Polícia"]){
+            pinView.image = [UIImage imageNamed:@"Policia"];
+        }else if([pointA.title isEqualToString:@"Assaltos"]){
+            pinView.image = [UIImage imageNamed:@"Assaltos"];
+        }else if([pointA.title isEqualToString:@"Briga"]){
+            pinView.image = [UIImage imageNamed:@"Briga"];
+        }else if([pointA.title isEqualToString:@"Organizadas"]){
+            pinView.image = [UIImage imageNamed:@"Organizadas"];
+        }else{
+            pinView.image = [UIImage imageNamed:@"Estadio"];
+        }
         return pinView;
     }
     return nil;
