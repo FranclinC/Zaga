@@ -129,7 +129,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49CE3E091AF2A97D00C64B4E /* resources */ = {
+		4980CFE51AF40A17001E5F96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49EDE3B91AF2BB010053660E /* CoreFoundation.framework */,
+				49EDE3BA1AF2BB010053660E /* CoreGraphics.framework */,
+				49EDE3BB1AF2BB010053660E /* UIKit.framework */,
+				49E028841AF2906300E628EC /* NotificationCenter.framework */,
+				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
+				49FE4FCD1AF159E300AB6E02 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49CE3E091AF2A97D00C64B4E /* images */ = {
 			isa = PBXGroup;
 			children = (
 				0023FCBF1AF403B600C501AF /* Arena.png */,
@@ -147,21 +160,16 @@
 				49CE3E171AF2A99000C64B4E /* telarelato2.png */,
 				49CE3E0E1AF2A99000C64B4E /* botaomapa.png */,
 			);
-			name = resources;
+			name = images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		49E69BD81AEF05F300D24A71 = {
 			isa = PBXGroup;
 			children = (
-				49EDE3B91AF2BB010053660E /* CoreFoundation.framework */,
-				49EDE3BA1AF2BB010053660E /* CoreGraphics.framework */,
-				49EDE3BB1AF2BB010053660E /* UIKit.framework */,
-				49E028841AF2906300E628EC /* NotificationCenter.framework */,
-				00ECD00A1AEFF9AF001021CD /* CloudKit.framework */,
-				49FE4FCD1AF159E300AB6E02 /* MapKit.framework */,
-				00ECD0071AEFF988001021CD /* README.md */,
-				49CE3E091AF2A97D00C64B4E /* resources */,
+				4980CFE51AF40A17001E5F96 /* Frameworks */,
 				49E69BE21AEF05F300D24A71 /* Products */,
+				00ECD0071AEFF988001021CD /* README.md */,
 				49E69BE31AEF05F300D24A71 /* Zaga */,
 				49E69BFD1AEF05F300D24A71 /* ZagaTests */,
 			);
@@ -179,29 +187,30 @@
 		49E69BE31AEF05F300D24A71 /* Zaga */ = {
 			isa = PBXGroup;
 			children = (
+				49E69BE81AEF05F300D24A71 /* AppDelegate.h */,
+				49E69BE91AEF05F300D24A71 /* AppDelegate.m */,
+				00ECD00C1AF00F26001021CD /* CloudProvider.h */,
+				00ECD00D1AF00F26001021CD /* CloudProvider.m */,
 				005B1B431AF02C3200A318CE /* GlobalObjects.h */,
 				005B1B441AF02C3200A318CE /* GlobalObjects.m */,
+				49CE3E091AF2A97D00C64B4E /* images */,
+				49E69BF11AEF05F300D24A71 /* Images.xcassets */,
+				49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */,
+				0023FCBC1AF30BDE00C501AF /* Main.storyboard */,
 				005B1B461AF02C3200A318CE /* MainViewController.h */,
 				005B1B471AF02C3200A318CE /* MainViewController.m */,
 				005B1B481AF02C3200A318CE /* MapViewController.h */,
 				005B1B491AF02C3200A318CE /* MapViewController.m */,
+				00ECD00F1AF01F18001021CD /* Report.h */,
+				00ECD0101AF01F18001021CD /* Report.m */,
 				005B1B4A1AF02C3200A318CE /* ReportViewController.h */,
 				005B1B4B1AF02C3200A318CE /* ReportViewController.m */,
 				005B1B4C1AF02C3200A318CE /* SelectViewController.h */,
 				005B1B4D1AF02C3200A318CE /* SelectViewController.m */,
 				005B1B4E1AF02C3200A318CE /* StadiumViewController.h */,
 				005B1B4F1AF02C3200A318CE /* StadiumViewController.m */,
-				00ECD0091AEFF9A9001021CD /* Zaga.entitlements */,
-				49E69BE81AEF05F300D24A71 /* AppDelegate.h */,
-				49E69BE91AEF05F300D24A71 /* AppDelegate.m */,
-				49E69BF11AEF05F300D24A71 /* Images.xcassets */,
-				0023FCBC1AF30BDE00C501AF /* Main.storyboard */,
-				49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */,
 				49E69BE41AEF05F300D24A71 /* Supporting Files */,
-				00ECD00C1AF00F26001021CD /* CloudProvider.h */,
-				00ECD00D1AF00F26001021CD /* CloudProvider.m */,
-				00ECD00F1AF01F18001021CD /* Report.h */,
-				00ECD0101AF01F18001021CD /* Report.m */,
+				00ECD0091AEFF9A9001021CD /* Zaga.entitlements */,
 			);
 			path = Zaga;
 			sourceTree = "<group>";
