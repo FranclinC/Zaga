@@ -11,6 +11,7 @@
 @interface MainViewController ()
 {
     NSArray *tableData;
+    NSArray *stadiumsIm;
 }
 @end
 
@@ -50,16 +51,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [MapViewController setMapIndex:indexPath.row ];
     
-    [self.tabBarController setSelectedIndex:0];
+    [self.tabBarController setSelectedIndex:1];
+    
 }
-/*
-#pragma mark - Navigation
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return  NSLocalizedString(@"Lista de Estádios", @"Lista de Estádios");
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
 
 @end

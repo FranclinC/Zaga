@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="mapaViews" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Sn-LH-XK9">
-                                <rect key="frame" x="0.0" y="66" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="549"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -24,7 +24,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Estadios" id="Vaz-mQ-IrK"/>
+                    <tabBarItem key="tabBarItem" title="Estadios" image="Home" id="Vaz-mQ-IrK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="TableView" destination="8Sn-LH-XK9" id="9XL-PK-KiO"/>
@@ -69,24 +69,32 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1uQ-5I-Ntr">
-                                <rect key="frame" x="307" y="71" width="63" height="42"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" id="lIi-V7-bK4">
+                                <rect key="frame" x="178" y="324" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="botaorefresh.png">
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1uQ-5I-Ntr">
+                                <rect key="frame" x="326" y="72" width="40" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Refresh">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="refresh:" destination="C6D-88-xBS" eventType="touchUpInside" id="z7S-fc-iAK"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" id="lIi-V7-bK4">
-                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w79-ej-E5e">
+                                <rect key="frame" x="126" y="20" width="123" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" id="Oob-5h-hPq"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="Mapa" id="Oob-5h-hPq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loading" destination="lIi-V7-bK4" id="048-wG-Jhp"/>
@@ -127,8 +135,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="C6D-88-xBS" kind="relationship" relationship="viewControllers" id="Zae-Ta-LJ1"/>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="mWw-XN-ZKk"/>
+                        <segue destination="C6D-88-xBS" kind="relationship" relationship="viewControllers" id="Obl-Om-6xV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzT-EK-pxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,12 +161,15 @@
         <!--Navigation Controller-->
         <scene sceneID="nEC-Rs-et7">
             <objects>
-                <navigationController id="8qM-vz-bsd" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="8qM-vz-bsd" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dmz-FE-f96">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="11S-fO-uY5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="liH-L3-f8n" kind="relationship" relationship="rootViewController" id="RbY-gK-E4f"/>
                     </connections>
@@ -169,7 +180,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="botaorefresh.png" width="99" height="101"/>
+        <image name="Home" width="30" height="30"/>
+        <image name="Mapa" width="30" height="30"/>
+        <image name="Refresh" width="30" height="30"/>
         <image name="botaorelato.png" width="750" height="144"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

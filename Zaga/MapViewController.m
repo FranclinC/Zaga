@@ -82,7 +82,7 @@ static int mapIndex =1;
                 [self.mapview addAnnotation:anno];
                  NSLog(@"Pin!! %@",anno.title);
             }
-            [self.tabBarController setSelectedIndex:0];
+            [self.tabBarController setSelectedIndex:1];
             _loading.hidden = YES;
             [self viewDidAppear:YES];
         }
@@ -112,6 +112,9 @@ static int mapIndex =1;
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
             pinView.canShowCallout = YES;
+            pinView.pinColor = MKPinAnnotationColorGreen;
+            pinView.leftCalloutAccessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"botahome.png"]];
+            NSLog(@"TA ENTRANDO AQUI!");
             
             // If appropriate, customize the callout by adding accessory views (code not shown).
         }
@@ -124,6 +127,7 @@ static int mapIndex =1;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    [self refresh];
     CLLocationCoordinate2D myCoordinate = {[[_latituteEstadios objectAtIndex:mapIndex] doubleValue], [[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]};
 
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1050, 1050);
@@ -133,11 +137,13 @@ static int mapIndex =1;
     _pin.coordinate = myCoordinate;
     _pin.title = [_nomesEstadios objectAtIndex:mapIndex];
     [self.mapview addAnnotation:_pin];
+        
 }
 
 // BUTTON ACTION
 - (IBAction)refresh:(id)sender {
     [self showRelatos];
+
 }
 
 
