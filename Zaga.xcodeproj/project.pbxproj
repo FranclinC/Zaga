@@ -20,6 +20,7 @@
 		00ECD00B1AEFF9AF001021CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ECD00A1AEFF9AF001021CD /* CloudKit.framework */; };
 		00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD00D1AF00F26001021CD /* CloudProvider.m */; };
 		00ECD0111AF01F18001021CD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECD0101AF01F18001021CD /* Report.m */; };
+		4980CFF71AF42221001E5F96 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980CFF61AF42221001E5F96 /* MainTableViewController.m */; };
 		49CE3E1A1AF2A99000C64B4E /* botaoenviar.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0C1AF2A99000C64B4E /* botaoenviar.png */; };
 		49CE3E1B1AF2A99000C64B4E /* botaohome.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0D1AF2A99000C64B4E /* botaohome.png */; };
 		49CE3E1C1AF2A99000C64B4E /* botaomapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CE3E0E1AF2A99000C64B4E /* botaomapa.png */; };
@@ -77,6 +78,8 @@
 		00ECD00D1AF00F26001021CD /* CloudProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudProvider.m; sourceTree = "<group>"; };
 		00ECD00F1AF01F18001021CD /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
 		00ECD0101AF01F18001021CD /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		4980CFF51AF42221001E5F96 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		4980CFF61AF42221001E5F96 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		49CE3E0C1AF2A99000C64B4E /* botaoenviar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaoenviar.png; path = resources/botaoenviar.png; sourceTree = "<group>"; };
 		49CE3E0D1AF2A99000C64B4E /* botaohome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaohome.png; path = resources/botaohome.png; sourceTree = "<group>"; };
 		49CE3E0E1AF2A99000C64B4E /* botaomapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botaomapa.png; path = resources/botaomapa.png; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				49E69BF11AEF05F300D24A71 /* Images.xcassets */,
 				49E69BF31AEF05F300D24A71 /* LaunchScreen.xib */,
 				0023FCBC1AF30BDE00C501AF /* Main.storyboard */,
+				4980CFF51AF42221001E5F96 /* MainTableViewController.h */,
+				4980CFF61AF42221001E5F96 /* MainTableViewController.m */,
 				005B1B461AF02C3200A318CE /* MainViewController.h */,
 				005B1B471AF02C3200A318CE /* MainViewController.m */,
 				005B1B481AF02C3200A318CE /* MapViewController.h */,
@@ -367,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4980CFF71AF42221001E5F96 /* MainTableViewController.m in Sources */,
 				00ECD00E1AF00F26001021CD /* CloudProvider.m in Sources */,
 				49E69BEA1AEF05F300D24A71 /* AppDelegate.m in Sources */,
 				005B1B541AF02C3200A318CE /* MapViewController.m in Sources */,

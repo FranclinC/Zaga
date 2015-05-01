@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreFoundation/CoreFoundation.h>
 
-@interface MainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
-
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@interface MainViewController : UITableViewController
 
 @end
