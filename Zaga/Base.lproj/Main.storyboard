@@ -79,12 +79,17 @@
                                     <action selector="refresh:" destination="C6D-88-xBS" eventType="touchUpInside" id="z7S-fc-iAK"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" id="lIi-V7-bK4">
+                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="Oob-5h-hPq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="loading" destination="lIi-V7-bK4" id="048-wG-Jhp"/>
                         <outlet property="mapView" destination="3Zy-Ee-Qmp" id="TbD-Oo-WcW"/>
                         <outlet property="mapview" destination="3Zy-Ee-Qmp" id="drR-q6-QnG"/>
                         <outlet property="refresh" destination="1uQ-5I-Ntr" id="plF-AI-0dk"/>

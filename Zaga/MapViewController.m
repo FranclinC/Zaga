@@ -20,6 +20,7 @@
 @property NSArray * nomeRelatos;
 @property MKPointAnnotation * pin;
 @property (weak, nonatomic) IBOutlet UIButton *refresh;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 
 @end
@@ -45,16 +46,16 @@ static int mapIndex =1;
     self.mapView.delegate = self;
     
     //Initialize initial stadiums
-    _latituteEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -8.04065],
-                         [NSNumber numberWithDouble: -8.06260769],[NSNumber numberWithDouble: -8.026699]
-                         , nil];
+    _latituteEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -8.04065],[NSNumber numberWithDouble: -8.06260769],[NSNumber numberWithDouble: -8.026699], nil];
     _longitudeEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -35.008205],
                           [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
     _nomesEstadios = [[NSArray alloc]initWithObjects:@"Arena PE",@"Ilha do Retiro",@"Arruda", nil];
     _nomeRelatos = [[NSArray alloc] initWithObjects:@"Policia",@"Assaltos",@"Tumulto",@"Organizadas", nil];
     //Init Cloud
     _cp = [[CloudProvider alloc] init];
-    //[self showRelatos];
+    _loading.hidden = YES;
+    //_loading.areAnimationsEnabled
+    [self showRelatos];
 
 }
 
@@ -67,8 +68,10 @@ static int mapIndex =1;
 -(void)showRelatos{
     
     CLLocation *loc = [[CLLocation alloc] initWithLatitude:[[_latituteEstadios objectAtIndex:mapIndex] doubleValue] longitude:[[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]];
+    _loading.hidden = NO;
     [_cp queryRelato:loc handler:(^(NSMutableArray* arr, NSError * error){
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.mapView removeAnnotations:self.mapView.annotations];
         if (error) {
             NSLog(@"Deu ruim!!");
         }else{
@@ -80,6 +83,8 @@ static int mapIndex =1;
                  NSLog(@"Pin!! %@",anno.title);
             }
             [self.tabBarController setSelectedIndex:0];
+            _loading.hidden = YES;
+            [self viewDidAppear:YES];
         }
         });
     })];
