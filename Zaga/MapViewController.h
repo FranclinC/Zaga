@@ -10,14 +10,12 @@
 #import <MapKit/MapKit.h>
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "CloudProvider.h"
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
-@property (strong, nonatomic) IBOutlet UISearchBar *searchField;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) IBOutlet UILabel *longitudeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *latitudeLabel;
+@property CloudProvider* cp;
 
 +(void)setMapIndex:(int)val;
 

@@ -17,7 +17,9 @@
 @property (strong,nonatomic) NSArray* latituteEstadios;
 @property (strong,nonatomic) NSArray* longitudeEstadios;
 @property (strong ,nonatomic) NSArray* nomesEstadios;
+@property NSArray * nomeRelatos;
 @property MKPointAnnotation * pin;
+@property (weak, nonatomic) IBOutlet UIButton *refresh;
 
 
 @end
@@ -42,31 +44,47 @@ static int mapIndex =1;
     [self.mapView showsUserLocation];
     self.mapView.delegate = self;
     
+    //Initialize initial stadiums
     _latituteEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -8.04065],
                          [NSNumber numberWithDouble: -8.06260769],[NSNumber numberWithDouble: -8.026699]
                          , nil];
     _longitudeEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -35.008205],
                           [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
     _nomesEstadios = [[NSArray alloc]initWithObjects:@"Arena PE",@"Ilha do Retiro",@"Arruda", nil];
-    
-    //for (int i = 0; i<3; i++) {
-    
-        
-    //}
-    
+    _nomeRelatos = [[NSArray alloc] initWithObjects:@"Policia",@"Assaltos",@"Tumulto",@"Organizadas", nil];
+    //Init Cloud
+    _cp = [[CloudProvider alloc] init];
+    //[self showRelatos];
+
 }
 
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void)showRelatos{
+    
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:[[_latituteEstadios objectAtIndex:mapIndex] doubleValue] longitude:[[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]];
+    [_cp queryRelato:loc handler:(^(NSMutableArray* arr, NSError * error){
+        dispatch_async(dispatch_get_main_queue(), ^{
+        if (error) {
+            NSLog(@"Deu ruim!!");
+        }else{
+            for(Relato *record in arr){
+                MKPointAnnotation* anno = [[MKPointAnnotation alloc]init];
+                anno.coordinate = record.position.coordinate;
+                anno.title = [_nomeRelatos objectAtIndex:[record.type integerValue]];
+                [self.mapview addAnnotation:anno];
+                 NSLog(@"Pin!! %@",anno.title);
+            }
+            [self.tabBarController setSelectedIndex:0];
+        }
+        });
+    })];
+
+}
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -110,6 +128,11 @@ static int mapIndex =1;
     _pin.coordinate = myCoordinate;
     _pin.title = [_nomesEstadios objectAtIndex:mapIndex];
     [self.mapview addAnnotation:_pin];
+}
+
+// BUTTON ACTION
+- (IBAction)refresh:(id)sender {
+    [self showRelatos];
 }
 
 

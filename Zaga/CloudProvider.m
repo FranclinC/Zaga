@@ -40,7 +40,7 @@
 -(void)queryRelato:(CLLocation *)location handler:(void(^)(NSMutableArray* arr, NSError * error))completion{
     CGFloat raio = 1000.0;
     
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"distanceToLocation:fromLocation:(location, %@) < %f", location,raio];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"distanceToLocation:fromLocation:(Location, %@) < %f", location,raio];
     CKQuery* query = [[CKQuery alloc] initWithRecordType:@"Relato" predicate:predicate];
     
     [_publicDatabase performQuery:query inZoneWithID:nil completionHandler:^(NSArray *results, NSError *error) {

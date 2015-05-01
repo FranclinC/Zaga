@@ -33,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532.5" y="1941.5"/>
+            <point key="canvasLocation" x="1558.5" y="1314.5"/>
         </scene>
         <!--Stadium View Controller-->
         <scene sceneID="WAh-ew-uEX">
@@ -62,13 +62,22 @@
                                 <rect key="frame" x="0.0" y="63" width="375" height="509"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FiF-ck-r3z">
-                                <rect key="frame" x="0.0" y="572" width="375" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FiF-ck-r3z">
+                                <rect key="frame" x="1" y="557" width="374" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="+">
+                                <state key="normal" title="+" image="botaorelato.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1uQ-5I-Ntr">
+                                <rect key="frame" x="307" y="71" width="63" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="botaorefresh.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refresh:" destination="C6D-88-xBS" eventType="touchUpInside" id="z7S-fc-iAK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +87,7 @@
                     <connections>
                         <outlet property="mapView" destination="3Zy-Ee-Qmp" id="TbD-Oo-WcW"/>
                         <outlet property="mapview" destination="3Zy-Ee-Qmp" id="drR-q6-QnG"/>
+                        <outlet property="refresh" destination="1uQ-5I-Ntr" id="plF-AI-0dk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smd-XG-Zg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,6 +163,10 @@
             <point key="canvasLocation" x="246" y="1315"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="botaorefresh.png" width="99" height="101"/>
+        <image name="botaorelato.png" width="750" height="144"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
