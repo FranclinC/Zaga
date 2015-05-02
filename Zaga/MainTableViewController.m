@@ -7,6 +7,7 @@
 //
 
 #import "MainTableViewController.h"
+#import "MapViewController.h"
 
 @interface MainTableViewController ()
 {
@@ -21,8 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    images = [[NSArray alloc] initWithObjects:@"ilha.png", @"Arruda.png", @"Arena.png", nil];
-    stadiums = @[@"Ilha do Retiro", @"Arruda", @"Aflitos"];
+    images = [[NSArray alloc] initWithObjects:@"Arena.png",@"ilha.png", @"Arruda.png",  nil];
+    stadiums = [@"Arena PE",@"Ilha do Retiro", @"Arruda"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +56,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return @"Estádios";
+}
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [MapViewController setMapIndex:indexPath.row];
 }
 
 @end
