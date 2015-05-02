@@ -7,6 +7,8 @@
 //
 
 #import "MapViewController.h"
+#define PIN_HEIGHT_OFFSET 5
+#define PIN_WIDTH_OFFSET 7.75
 
 @interface MapViewController ()
 
@@ -22,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *refresh;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (weak, nonatomic) IBOutlet UILabel *Title;
+@property (strong, nonatomic) MKAnnotationView *centerAnnotationView;
 
 
 @end
@@ -29,14 +32,25 @@
 @implementation MapViewController
 
 static int mapIndex =1;
+static int typeAdd=0;
+static BOOL showCenterAnnotation = 0;
 
 +(void)setMapIndex:(int)val{
     mapIndex = val;
 }
++(void)showCenter:(BOOL)vall{
+    showCenterAnnotation = vall;
+}
++(void)setTypeAdd:(int)val{
+    typeAdd = val;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.mapView addSubview:self.centerAnnotationView];
+    _centerAnnotationView.hidden = YES;
     // Do any additional setup after loading the view.
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -55,6 +69,7 @@ static int mapIndex =1;
     //Init Cloud
     _cp = [[CloudProvider alloc] init];
     _loading.hidden = YES;
+    
     //_loading.areAnimationsEnabled
     [self showRelatos];
 
@@ -86,6 +101,13 @@ static int mapIndex =1;
             [self.tabBarController setSelectedIndex:1];
             _loading.hidden = YES;
             [self.mapview addAnnotation:_pin];
+            if(showCenterAnnotation){
+                _centerAnnotationView.hidden = NO;
+            }
+            else{
+                _centerAnnotationView.hidden = YES;
+            }
+            
             //[self viewDidAppear:YES];
         }
         });
@@ -137,20 +159,74 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     CLLocationCoordinate2D myCoordinate = {[[_latituteEstadios objectAtIndex:mapIndex] doubleValue], [[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]};
 
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1050, 1050);
+    
+    if(typeAdd ==0){
+        _centerAnnotationView.image = [UIImage imageNamed:@"Policia"];
+    }else if (typeAdd == 1){
+        _centerAnnotationView.image = [UIImage imageNamed:@"Assaltos"];
+    } else if (typeAdd ==2){
+        _centerAnnotationView.image = [UIImage imageNamed:@"Briga"];
+    }else {
+        _centerAnnotationView.image = [UIImage imageNamed:@"Organizadas"];
+    }
+    
     [self.mapview setRegion:viewRegion animated:YES];
     [self.mapview removeAnnotation:_pin];
     _pin = [[MKPointAnnotation alloc] init];
     _pin.coordinate = myCoordinate;
     _pin.title = [_nomesEstadios objectAtIndex:mapIndex];
+    //[self moveMapAnnotationToCoordinate:self.mapView.centerCoordinate];
+    _centerAnnotation.title = @"CenterAnotation";
+    //_centerAnnotationView.image =[UIImage imageNamed:@"Home"];
     [self showRelatos];
+    
     _Title.text =[_nomesEstadios objectAtIndex:mapIndex];
+    //if(showCenterAnnotation){
+    
+    //}else{
+        //[_mapView removeAnnotation:_centerAnnotation];
+    //}
+    
+    [self.navigationController setNavigationBarHidden:YES];
         
 }
 
 // BUTTON ACTION
 - (IBAction)refresh:(id)sender {
     [self showRelatos];
+}
 
+- (MKPointAnnotation *)centerAnnotation
+{
+    if (!_centerAnnotation) {
+        _centerAnnotation = [[MKPointAnnotation alloc] init];
+    }
+    
+    return _centerAnnotation;
+}
+- (MKAnnotationView *)centerAnnotationView
+{
+    if (!_centerAnnotationView) {
+        _centerAnnotationView = [[MKAnnotationView alloc] initWithAnnotation:self.centerAnnotation reuseIdentifier:@"centerAnnotationView"];
+        
+    }
+    
+    return _centerAnnotationView;
+}
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [self.centerAnnotation setCoordinate:mapView.centerCoordinate];
+    [self moveMapAnnotationToCoordinate:mapView.centerCoordinate];
+}
+
+-(void)moveMapAnnotationToCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    CGPoint mapViewPoint = [self.mapView convertCoordinate:coordinate toPointToView:self.mapView];
+    CGFloat xoffset = CGRectGetMidX(self.centerAnnotationView.bounds) - PIN_WIDTH_OFFSET;;
+    CGFloat yoffset = -CGRectGetMidY(self.centerAnnotationView.bounds)+ PIN_HEIGHT_OFFSET;;
+    
+    self.centerAnnotationView.center = CGPointMake(mapViewPoint.x + xoffset,mapViewPoint.y + yoffset);
 }
 
 

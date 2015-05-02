@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0005FD4D1AF50551000B7F93 /* botoes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0005FD4C1AF50551000B7F93 /* botoes.png */; };
 		0023FCBE1AF30BDE00C501AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0023FCBC1AF30BDE00C501AF /* Main.storyboard */; };
 		0023FCC21AF403B600C501AF /* Arena.png in Resources */ = {isa = PBXBuildFile; fileRef = 0023FCBF1AF403B600C501AF /* Arena.png */; };
 		0023FCC31AF403B600C501AF /* Arruda.png in Resources */ = {isa = PBXBuildFile; fileRef = 0023FCC01AF403B600C501AF /* Arruda.png */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0005FD4C1AF50551000B7F93 /* botoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botoes.png; path = Zaga/botoes.png; sourceTree = "<group>"; };
 		0023FCBD1AF30BDE00C501AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0023FCBF1AF403B600C501AF /* Arena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arena.png; sourceTree = "<group>"; };
 		0023FCC01AF403B600C501AF /* Arruda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arruda.png; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				49CE3E151AF2A99000C64B4E /* telamapa.png */,
 				49CE3E0D1AF2A99000C64B4E /* botaohome.png */,
 				49CE3E161AF2A99000C64B4E /* telarelato1.png */,
+				0005FD4C1AF50551000B7F93 /* botoes.png */,
 				49CE3E171AF2A99000C64B4E /* telarelato2.png */,
 				49CE3E0E1AF2A99000C64B4E /* botaomapa.png */,
 			);
@@ -349,6 +352,7 @@
 				49CE3E1D1AF2A99000C64B4E /* botaorefresh.png in Resources */,
 				0023FCC31AF403B600C501AF /* Arruda.png in Resources */,
 				0023FCC61AF40FD500C501AF /* policia-2.png in Resources */,
+				0005FD4D1AF50551000B7F93 /* botoes.png in Resources */,
 				49CE3E1E1AF2A99000C64B4E /* botaorelato.png in Resources */,
 				49E69BF21AEF05F300D24A71 /* Images.xcassets in Resources */,
 				0023FCC21AF403B600C501AF /* Arena.png in Resources */,

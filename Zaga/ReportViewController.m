@@ -7,6 +7,7 @@
 //
 
 #import "ReportViewController.h"
+#import "MapViewController.h"
 
 @interface ReportViewController ()
 
@@ -16,12 +17,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)policiaAction:(id)sender {
+    [MapViewController showCenter:YES];
+    [MapViewController setTypeAdd:0];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (IBAction)rouvoAction:(id)sender {
+    [MapViewController showCenter:YES];
+    [MapViewController setTypeAdd:1];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)organizadasAction:(id)sender {
+    [MapViewController showCenter:YES];
+    [MapViewController setTypeAdd:3];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)brigaAction:(id)sender {
+    [MapViewController showCenter:YES];
+    [MapViewController setTypeAdd:2];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

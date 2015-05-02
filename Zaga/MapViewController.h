@@ -16,7 +16,10 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property CloudProvider* cp;
+@property (strong, nonatomic) MKPointAnnotation *centerAnnotation;
 
 +(void)setMapIndex:(int)val;
++(void)showCenter:(BOOL)val;
++(void)setTypeAdd:(int)val;
 
 @end
