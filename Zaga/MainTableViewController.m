@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     images = [[NSArray alloc] initWithObjects:@"Arena.png",@"ilha.png", @"Arruda.png",  nil];
-    stadiums = [@"Arena PE",@"Ilha do Retiro", @"Arruda"];
+    stadiums = @[@"Arena PE",@"Ilha do Retiro", @"Arruda"];
 }
 
 - (void)didReceiveMemoryWarning
