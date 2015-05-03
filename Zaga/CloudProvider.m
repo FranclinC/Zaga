@@ -25,14 +25,17 @@
     record[@"Type"] = relato.type;
     record[@"Time"] = relato.time;
     
-    [_publicDatabase saveRecord:record completionHandler:^(CKRecord *artworkRecord, NSError *error){
+    CKModifyRecordsOperation *mro = [[CKModifyRecordsOperation alloc] initWithRecordsToSave:@[record] recordIDsToDelete:nil];
+    [_publicDatabase addOperation:mro];
+    
+    /*[_publicDatabase saveRecord:record completionHandler:^(CKRecord *artworkRecord, NSError *error){
         if (!error) {
             // Insert successfully saved record code
         }
         else {
             // Insert error handling
         }
-    }];
+    }];*/
 
     return YES;
 }

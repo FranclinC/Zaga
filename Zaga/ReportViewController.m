@@ -19,6 +19,9 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO];
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -27,24 +30,32 @@
 - (IBAction)policiaAction:(id)sender {
     [MapViewController showCenter:YES];
     [MapViewController setTypeAdd:0];
-    [self.navigationController popViewControllerAnimated:YES];
+    MapViewController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"GoMap"];
+    [self.navigationController pushViewController:tempView animated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController performSegueWithIdentifier:@"goMap" sender:sender];
     
 }
 
 - (IBAction)rouvoAction:(id)sender {
     [MapViewController showCenter:YES];
     [MapViewController setTypeAdd:1];
-    [self.navigationController popViewControllerAnimated:YES];
+    MapViewController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"GoMap"];
+    [self.navigationController pushViewController:tempView animated:YES];
+    
 }
 - (IBAction)organizadasAction:(id)sender {
     [MapViewController showCenter:YES];
     [MapViewController setTypeAdd:3];
-    [self.navigationController popViewControllerAnimated:YES];
+    MapViewController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"GoMap"];
+    [self.navigationController pushViewController:tempView animated:YES];
 }
 - (IBAction)brigaAction:(id)sender {
     [MapViewController showCenter:YES];
     [MapViewController setTypeAdd:2];
-    [self.navigationController popViewControllerAnimated:YES];
+    MapViewController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"GoMap"];
+    [self.navigationController pushViewController:tempView animated:YES];
+    //[self.navigationController performSegueWithIdentifier:@"goMap" sender:sender];
 }
 
 /*

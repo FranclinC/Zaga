@@ -17,6 +17,8 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property CloudProvider* cp;
 @property (strong, nonatomic) MKPointAnnotation *centerAnnotation;
+@property (weak, nonatomic) IBOutlet UIButton *confirma;
+@property (weak, nonatomic) IBOutlet UIButton *Cancela;
 
 +(void)setMapIndex:(int)val;
 +(void)showCenter:(BOOL)val;

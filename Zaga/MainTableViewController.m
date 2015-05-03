@@ -36,6 +36,9 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)didReceiveMemoryWarning
 {

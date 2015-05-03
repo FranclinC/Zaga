@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (weak, nonatomic) IBOutlet UILabel *Title;
 @property (strong, nonatomic) MKAnnotationView *centerAnnotationView;
-
+@property (weak, nonatomic) IBOutlet UINavigationItem *titleFromBar;
 
 @end
 
@@ -157,7 +157,7 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
 - (void)viewDidAppear:(BOOL)animated{
     [self refresh];
     CLLocationCoordinate2D myCoordinate = {[[_latituteEstadios objectAtIndex:mapIndex] doubleValue], [[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]};
-
+    
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1050, 1050);
     
     if(typeAdd ==0){
@@ -180,7 +180,7 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     //_centerAnnotationView.image =[UIImage imageNamed:@"Home"];
     [self showRelatos];
     
-    _Title.text =[_nomesEstadios objectAtIndex:mapIndex];
+    _titleFromBar.title = [_nomesEstadios objectAtIndex:mapIndex];
     //if(showCenterAnnotation){
     
     //}else{
@@ -227,6 +227,36 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     CGFloat yoffset = -CGRectGetMidY(self.centerAnnotationView.bounds)+ PIN_HEIGHT_OFFSET;;
     
     self.centerAnnotationView.center = CGPointMake(mapViewPoint.x + xoffset,mapViewPoint.y + yoffset);
+}
+- (IBAction)cancelaAction:(id)sender {
+    showCenterAnnotation = NO;
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+- (IBAction)confirmaAction:(id)sender {
+    showCenterAnnotation = NO;
+    Relato * rela  = [[Relato alloc] init];
+    rela.type = [[NSNumber alloc] initWithInteger:typeAdd];
+    rela.position = [[CLLocation alloc] initWithLatitude:_centerAnnotation.coordinate.latitude longitude:_centerAnnotation.coordinate.longitude];
+    
+    [_cp addRelato:rela];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        MKPointAnnotation* anno = [[MKPointAnnotation alloc]init];
+        MapViewController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"InitMap"];
+        anno.coordinate = rela.position.coordinate;
+        anno.title = [_nomeRelatos objectAtIndex:[rela.type integerValue]];
+        [tempView.mapview addAnnotation:anno];
+    });
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    //UITabBarController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"tab bar"];
+    //[tempView setSelectedIndex:1];
+    //[self.navigationController popToViewController:tempView animated:NO];
+    
+
+    
 }
 
 
