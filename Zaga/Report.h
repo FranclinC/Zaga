@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/Corelocation.h>
+
 @interface Relato : NSObject
+
 @property CLLocation * position;
 @property NSNumber* type;
 @property NSDate * time;
-
 
 @end

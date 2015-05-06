@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+
 #define PIN_HEIGHT_OFFSET 5
 #define PIN_WIDTH_OFFSET 7.75
 
@@ -35,56 +36,57 @@ static int mapIndex =1;
 static int typeAdd=0;
 static BOOL showCenterAnnotation = 0;
 
-+(void)setMapIndex:(int)val{
++(void)setMapIndex:(int)val
+{
     mapIndex = val;
 }
-+(void)showCenter:(BOOL)vall{
+
++(void)showCenter:(BOOL)vall
+{
     showCenterAnnotation = vall;
 }
-+(void)setTypeAdd:(int)val{
+
++(void)setTypeAdd:(int)val
+{
     typeAdd = val;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self.mapView addSubview:self.centerAnnotationView];
     _centerAnnotationView.hidden = YES;
-    // Do any additional setup after loading the view.
-    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestWhenInUseAuthorization];
-    //[self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
     [self.mapView showsUserLocation];
     self.mapView.delegate = self;
     
-    //Initialize initial stadiums
     _latituteEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -8.04065],[NSNumber numberWithDouble: -8.06260769],[NSNumber numberWithDouble: -8.026699], nil];
-    _longitudeEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -35.008205],
-                          [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
+    _longitudeEstadios = [[NSArray alloc] initWithObjects:[NSNumber numberWithDouble: -35.008205], [NSNumber numberWithDouble: -34.9031353],[NSNumber numberWithDouble: -34.891111], nil];
     _nomesEstadios = [[NSArray alloc]initWithObjects:@"Arena PE",@"Ilha do Retiro",@"Arruda", nil];
     _nomeRelatos = [[NSArray alloc] initWithObjects:@"Polícia",@"Assaltos",@"Briga",@"Organizadas", nil];
-    //Init Cloud
+    
     _cp = [[CloudProvider alloc] init];
     _loading.hidden = YES;
     
-    //_loading.areAnimationsEnabled
     [self showRelatos];
 
 }
 
-
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)showRelatos{
-    
+-(void)showRelatos
+{
     CLLocation *loc = [[CLLocation alloc] initWithLatitude:[[_latituteEstadios objectAtIndex:mapIndex] doubleValue] longitude:[[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]];
     _loading.hidden = NO;
+    
     [_cp queryRelato:loc handler:(^(NSMutableArray* arr, NSError * error){
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.mapView removeAnnotations:self.mapView.annotations];
@@ -107,37 +109,28 @@ static BOOL showCenterAnnotation = 0;
             else{
                 _centerAnnotationView.hidden = YES;
             }
-            
-            //[self viewDidAppear:YES];
         }
         });
     })];
-
 }
-- (MKAnnotationView *)mapView:(MKMapView *)mapView
-            viewForAnnotation:(id <MKAnnotation>)annotation
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    // If the annotation is the user location, just return nil.
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
-    
-    // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
-    {
-        // Try to dequeue an existing pin view first.
-        MKAnnotationView*    pinView = (MKAnnotationView*)[mapView
-dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+
+    if ([annotation isKindOfClass:[MKPointAnnotation class]]){
+        MKAnnotationView*    pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
-        if (!pinView)
-        {
-            // If an existing pin view was not available, create one.
+        if (!pinView){
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.canShowCallout = YES;
-            
-        }else
+        }else{
             pinView.annotation = annotation;
+        }
         
         MKPointAnnotation* pointA = (MKPointAnnotation*)annotation;
+        
         if([pointA.title isEqualToString:@"Polícia"]){
             pinView.image = [UIImage imageNamed:@"Policia"];
         }else if([pointA.title isEqualToString:@"Assaltos"]){
@@ -149,15 +142,17 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         }else{
             pinView.image = [UIImage imageNamed:@"Estadio"];
         }
+        
         return pinView;
     }
+    
     return nil;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated
+{
     [self refresh];
     CLLocationCoordinate2D myCoordinate = {[[_latituteEstadios objectAtIndex:mapIndex] doubleValue], [[_longitudeEstadios objectAtIndex:mapIndex] doubleValue]};
-    
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1050, 1050);
     
     if(typeAdd ==0){
@@ -175,24 +170,14 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     _pin = [[MKPointAnnotation alloc] init];
     _pin.coordinate = myCoordinate;
     _pin.title = [_nomesEstadios objectAtIndex:mapIndex];
-    //[self moveMapAnnotationToCoordinate:self.mapView.centerCoordinate];
     _centerAnnotation.title = @"CenterAnotation";
-    //_centerAnnotationView.image =[UIImage imageNamed:@"Home"];
     [self showRelatos];
-    
     _titleFromBar.title = [_nomesEstadios objectAtIndex:mapIndex];
-    //if(showCenterAnnotation){
-    
-    //}else{
-        //[_mapView removeAnnotation:_centerAnnotation];
-    //}
-    
     [self.navigationController setNavigationBarHidden:YES];
-        
 }
 
-// BUTTON ACTION
-- (IBAction)refresh:(id)sender {
+- (IBAction)refresh:(id)sender
+{
     [self showRelatos];
 }
 
@@ -204,12 +189,11 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     
     return _centerAnnotation;
 }
+
 - (MKAnnotationView *)centerAnnotationView
 {
-    if (!_centerAnnotationView) {
+    if (!_centerAnnotationView)
         _centerAnnotationView = [[MKAnnotationView alloc] initWithAnnotation:self.centerAnnotation reuseIdentifier:@"centerAnnotationView"];
-        
-    }
     
     return _centerAnnotationView;
 }
@@ -225,15 +209,18 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     CGPoint mapViewPoint = [self.mapView convertCoordinate:coordinate toPointToView:self.mapView];
     CGFloat xoffset = CGRectGetMidX(self.centerAnnotationView.bounds) - PIN_WIDTH_OFFSET;;
     CGFloat yoffset = -CGRectGetMidY(self.centerAnnotationView.bounds)+ PIN_HEIGHT_OFFSET;;
-    
     self.centerAnnotationView.center = CGPointMake(mapViewPoint.x + xoffset,mapViewPoint.y + yoffset);
 }
-- (IBAction)cancelaAction:(id)sender {
+
+- (IBAction)cancelaAction:(id)sender
+{
     showCenterAnnotation = NO;
     [self.navigationController popViewControllerAnimated:YES];
     
 }
-- (IBAction)confirmaAction:(id)sender {
+
+- (IBAction)confirmaAction:(id)sender
+{
     showCenterAnnotation = NO;
     Relato * rela  = [[Relato alloc] init];
     rela.type = [[NSNumber alloc] initWithInteger:typeAdd];
@@ -250,15 +237,6 @@ dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     
     [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
-    
-    //UITabBarController *tempView =[self.storyboard instantiateViewControllerWithIdentifier:@"tab bar"];
-    //[tempView setSelectedIndex:1];
-    //[self.navigationController popToViewController:tempView animated:NO];
-    
-
-    
 }
-
-
 
 @end

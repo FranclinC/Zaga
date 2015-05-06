@@ -8,17 +8,17 @@
 
 #import "GlobalObjects.h"
 
-//static MyObject1* _myObject1 = nil;
 static NSArray * _RelatoArray;
 
 @implementation GlobalObjects
 
-
-+(void)loadRelato:(NSArray *)relatos{
++(void)loadRelato:(NSArray *)relatos
+{
     _RelatoArray = relatos;
 }
 
-+(NSArray*)RelatosArray {
++(NSArray*)RelatosArray
+{
     return _RelatoArray;
 }
 

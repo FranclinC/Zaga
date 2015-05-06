@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "Report.h"
 #import <UIKit/UIKit.h>
+
 #import "GlobalObjects.h"
+#import "Report.h"
 
 @import CloudKit;
 
 @interface CloudProvider : NSObject
+
 @property CKContainer * myContainer;
 @property CKDatabase * publicDatabase;
-
 
 -(id)init;
 -(BOOL)addRelato:(Relato*)relato;
 -(void)queryRelato:(CLLocation *)location handler:(void(^)(NSMutableArray* arr, NSError * error))completion;
+
 @end

@@ -16,6 +16,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation MainTableViewController
@@ -26,17 +27,18 @@
     images = [[NSArray alloc] initWithObjects:@"Arena.png",@"ilha.png", @"Arruda.png",  nil];
     stadiums = @[@"Arena PE",@"Ilha do Retiro", @"Arruda"];
     [self.navigationController setNavigationBarHidden:NO];
-    //self.edgesForExtendedLayout = UIRectEdgeNone;
-    //self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = YES;
     self.tableView.delegate = self;
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
 }
--(void)viewDidAppear:(BOOL)animated{
+
+-(void)viewDidAppear:(BOOL)animated
+{
     [self.navigationController setNavigationBarHidden:NO];
 }
 
@@ -44,8 +46,6 @@
 {
     [super didReceiveMemoryWarning];
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -60,12 +60,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+    
     cell.textLabel.text = [stadiums objectAtIndex:indexPath.row];
     cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     cell.imageView.layer.cornerRadius =  30;
@@ -75,9 +75,9 @@
     return cell;
 }
 
--(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [MapViewController setMapIndex:indexPath.row];
-    
     [self.tabBarController setSelectedIndex:1];
 }
 

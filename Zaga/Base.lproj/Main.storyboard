@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8qM-vz-bsd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8qM-vz-bsd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Mapa-->
@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smd-XG-Zg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.5" y="2175.5"/>
+            <point key="canvasLocation" x="925.5" y="1935.5"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="BSB-cB-rQ3">
@@ -88,7 +88,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzT-EK-pxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.5" y="1332.5"/>
+            <point key="canvasLocation" x="925.5" y="1115.5"/>
         </scene>
         <!--ZAGA-->
         <scene sceneID="nEC-Rs-et7">
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHd-Ju-EpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421.5" y="1332.5"/>
+            <point key="canvasLocation" x="1473.5" y="1115.5"/>
         </scene>
         <!--Selecione o tipo do Relato:-->
         <scene sceneID="dzN-Ky-RL7">
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0g-7r-ZV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="554.5" y="2689.5"/>
+            <point key="canvasLocation" x="925.5" y="2767.5"/>
         </scene>
         <!--Nos diga onde:-->
         <scene sceneID="m8F-Lc-WVI">
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6p-DL-RDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-0.5" y="2588.5"/>
+            <point key="canvasLocation" x="373.5" y="2767.5"/>
         </scene>
     </scenes>
     <resources>

@@ -10,8 +10,10 @@
 
 @implementation CloudProvider
 
--(id) init{
+-(id) init
+{
     self = [super init];
+    
     if(self){
     _myContainer =[CKContainer defaultContainer];
     _publicDatabase = [_myContainer publicCloudDatabase];
@@ -19,7 +21,9 @@
     
     return self;
 }
--(BOOL)addRelato:(Relato*)relato{
+
+-(BOOL)addRelato:(Relato*)relato
+{
     CKRecord * record = [[CKRecord alloc] initWithRecordType:@"Relato"];
     record[@"Location"] = relato.position;
     record[@"Type"] = relato.type;
@@ -27,20 +31,12 @@
     
     CKModifyRecordsOperation *mro = [[CKModifyRecordsOperation alloc] initWithRecordsToSave:@[record] recordIDsToDelete:nil];
     [_publicDatabase addOperation:mro];
-    
-    /*[_publicDatabase saveRecord:record completionHandler:^(CKRecord *artworkRecord, NSError *error){
-        if (!error) {
-            // Insert successfully saved record code
-        }
-        else {
-            // Insert error handling
-        }
-    }];*/
 
     return YES;
 }
 
--(void)queryRelato:(CLLocation *)location handler:(void(^)(NSMutableArray* arr, NSError * error))completion{
+-(void)queryRelato:(CLLocation *)location handler:(void(^)(NSMutableArray* arr, NSError * error))completion
+{
     CGFloat raio = 1000.0;
     
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"distanceToLocation:fromLocation:(Location, %@) < %f", location,raio];
@@ -63,8 +59,6 @@
             completion(arr,error);
         }
      ];
-
 }
-
 
 @end

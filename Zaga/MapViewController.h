@@ -10,7 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+
 #import "CloudProvider.h"
+
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;

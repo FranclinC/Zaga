@@ -10,7 +10,8 @@
 
 @implementation Relato
 
--(id)initWithlocation:(CLLocation*)posicao type:(NSNumber*)tipo{
+-(id)initWithlocation:(CLLocation*)posicao type:(NSNumber*)tipo
+{
     self = [super init];
     
     if(self){
